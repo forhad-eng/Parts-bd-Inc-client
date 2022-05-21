@@ -1,0 +1,82 @@
+[
+    {
+        "name": "STP Generator Platinum",
+        "image": "https://i.ibb.co/C7FzP0Z/product1.jpg",
+        "price": 379,
+        "minOrder": 500,
+        "description": "Material: Aluminum, Amperage Rating: 115 A",
+        "available": 100000
+    },
+    {
+        "name": "Brake Kit",
+        "image": "https://i.ibb.co/FnMBLty/product2.jpg",
+        "price": 269,
+        "minOrder": 300,
+        "description": "Material: Steel, Outside Diameter: 320 mm",
+        "available": 50000
+    },
+    {
+        "name": "Specter Brake Kit",
+        "image": "https://i.ibb.co/cCKkcyb/product3.jpg",
+        "price": 159,
+        "minOrder": 600,
+        "description": "Material: Steel, Axle: Front",
+        "available": 75000
+    },
+    {
+        "name": "Sunset Brake Kit",
+        "image": "https://i.ibb.co/Pw9C7pQ/product4.jpg",
+        "price": 499,
+        "minOrder": 700,
+        "description": "Material: Ceramic, Axle: Rear",
+        "available": 200000
+    },
+    {
+        "name": "Air Suspension",
+        "image": "https://i.ibb.co/sQNdkVn/product5.jpg",
+        "price": 162,
+        "minOrder": 300,
+        "description": "Material: Aluminum, Color: Black",
+        "available": 9000
+    },
+    {
+        "name": "Door Lock",
+        "image": "https://i.ibb.co/sK5xYrR/product6.jpg",
+        "price": 21,
+        "minOrder": 500,
+        "description": "Material: Plastic, Color: Gray",
+        "available": 60000
+    },
+    {
+        "name": "Side Rear view Mirror",
+        "image": "https://i.ibb.co/tqYY54V/product7.jpg",
+        "price": 40,
+        "minOrder": 200,
+        "description": "Material: Plastic, Color: Gray",
+        "available": 15000
+    },
+    {
+        "name": "Low Beam Lamp",
+        "image": "https://i.ibb.co/wwN1stb/product8.jpg",
+        "price": 10,
+        "minOrder": 150,
+        "description": "Bulb Technology: Halogen, Bulb Color: Clear",
+        "available": 150000
+    },
+    {
+        "name": "12-Stroke Engine",
+        "image": "https://i.ibb.co/WHFXg8q/product9.jpg",
+        "price": 2500,
+        "minOrder": 20,
+        "description": "Power: 1991 hp, Fuel Type: Petrol",
+        "available": 1000
+    },
+    {
+        "name": "Driver's seat",
+        "image": "https://i.ibb.co/6g47YVx/product10.jpg",
+        "price": 78,
+        "minOrder": 100,
+        "description": "Material: Leather, Color: Black",
+        "available": 6000
+    }
+]
