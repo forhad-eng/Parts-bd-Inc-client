@@ -1,23 +1,53 @@
 import React from 'react'
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import googleLogo from '../../assets/icons/google.png'
+import auth from '../../Firebase/firebase.init'
+import useToken from '../../hooks/useToken'
+import LoadingSpinner from '../Shared/LoadingSpinner'
 
 const Login = () => {
+    const [signInWithEmailAndPassword, eUser, eLoading, eErr] = useSignInWithEmailAndPassword(auth)
+    const [signInWithGoogle, gUser, gLoading, gErr] = useSignInWithGoogle(auth)
+    const [token] = useToken(eUser || gUser)
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
+        reset
     } = useForm()
-    const onSubmit = data => console.log(data)
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const from = location?.state?.from.pathname || '/'
+
+    let errorMessage
+    if (eErr || gErr) {
+        errorMessage = <p className="text-primary">{eErr.message}</p>
+    }
+
+    if (token) {
+        navigate(from, { replace: true })
+    }
+
+    if (eLoading || gLoading) {
+        return <LoadingSpinner />
+    }
+
+    const onSubmit = data => {
+        signInWithEmailAndPassword(data.email, data.password)
+        reset()
+    }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="card w-full lg:max-w-md mx-auto shadow-2xl bg-base-10 mt-14">
-            <div class="card-body">
+        <div className="card card-body w-full lg:max-w-md mx-auto shadow-2xl bg-base-10 mt-14 mb-6">
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <h3 className="text-2xl font-semibold mb-1">Login</h3>
                 <hr />
-                <div class="form-control">
-                    <label class="label">
-                        <span class="label-text">
+                <div className="form-control mt-2">
+                    <label className="label">
+                        <span className="label-text">
                             Email<span className="text-red"> *</span>
                         </span>
                     </label>
@@ -28,14 +58,14 @@ const Login = () => {
                         })}
                         type="text"
                         placeholder="Email"
-                        class="input input-bordered"
+                        className="input input-bordered"
                     />
                     {errors?.email?.type === 'required' && <p className="text-primary">{errors.email.message}</p>}
                     {errors?.email?.type === 'pattern' && <p className="text-primary">{errors.email.message}</p>}
                 </div>
-                <div class="form-control">
-                    <label class="label">
-                        <span class="label-text">
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">
                             Password<span className="text-red"> *</span>
                         </span>
                     </label>
@@ -46,29 +76,39 @@ const Login = () => {
                         })}
                         type="text"
                         placeholder="Password"
-                        class="input input-bordered"
+                        className="input input-bordered"
                     />
                     {errors?.password?.type === 'required' && <p className="text-primary">{errors.password.message}</p>}
                     {errors?.password?.type === 'minLength' && (
                         <p className="text-primary">{errors.password.message}</p>
                     )}
-                    <label class="label">
-                        <Link to="/" class="label-text-alt link link-hover">
+                    <label className="label">
+                        <Link to="/" className="label-text-alt link link-hover">
                             Forgot password?
                         </Link>
                     </label>
                 </div>
-                <div class="form-control">
-                    <button class="btn btn-primary text-white uppercase">Login</button>
+                {errorMessage}
+                <div className="form-control">
+                    <button className="btn btn-primary text-white uppercase">Login</button>
                 </div>
                 <button className="label-text-alt text-left">
                     Fresh user?
-                    <Link to="/signup" class="hover:underline">
+                    <Link to="/signup" className="hover:underline">
                         <span className="ml-1 text-accent">Create an account</span>
                     </Link>
                 </button>
+            </form>
+            <div class="divider">OR</div>
+            <div className="form-control">
+                <button
+                    onClick={() => signInWithGoogle()}
+                    className="btn btn-ghost btn-outline btn-info justify-evenly"
+                >
+                    <img className="h-8" src={googleLogo} alt="Google Sign in" /> Continue with Google
+                </button>
             </div>
-        </form>
+        </div>
     )
 }
 
