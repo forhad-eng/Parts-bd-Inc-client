@@ -26,19 +26,28 @@ const FeaturedParts = () => {
             <div className="flex justify-between items-center border-b-2">
                 <h4 className="text-xl font-semibold">Featured Products</h4>
                 <div className="flex items-center">
-                    <button onClick={() => setSize(10)} className="btn btn-ghost btn-sm mr-2">
+                    <button onClick={() => setSize(10)} className="btn btn-secondary btn-xs">
                         All
                     </button>
-                    <FontAwesomeIcon
+                    <button
+                        disabled={page === 0}
                         onClick={() => setPage(page > 0 && page - 1)}
-                        icon={faChevronLeft}
-                        className="bg-primary text-white p-1"
-                    />
-                    <FontAwesomeIcon
+                        className={`btn btn-link btn-xs text-white p-1 px-2 ml-1 hover:bg-primary ${
+                            page === 0 ? 'bg-red-400' : 'bg-primary'
+                        }`}
+                    >
+                        <FontAwesomeIcon icon={faChevronLeft} />
+                    </button>
+                    <button
+                        disabled={page === 6}
                         onClick={() => setPage(page < 6 && page + 1)}
-                        icon={faChevronRight}
-                        className={`text-white p-1 ml-1 ${page >= 6 ? 'bg-red-400' : 'bg-primary'}`}
-                    />
+                        className={`btn btn-link btn-xs text-white p-1 px-2 ml-1 hover:bg-primary ${
+                            page >= 6 ? 'bg-red-400' : 'bg-primary'
+                        }`}
+                    >
+                        {' '}
+                        <FontAwesomeIcon icon={faChevronRight} />
+                    </button>
                 </div>
             </div>
 
