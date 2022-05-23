@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom'
 
 const PartsCard = ({ parts }) => {
     const { name, image, price, description, minOrder, available } = parts
-
     return (
-        <div class="card bg-base-100 shadow">
+        <div class="card bg-base-100 shadow-lg">
             <figure>
                 <img src={image} alt="Shoes" />
             </figure>

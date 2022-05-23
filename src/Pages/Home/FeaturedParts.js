@@ -14,9 +14,8 @@ const FeaturedParts = () => {
         const { data } = await axiosPrivate.get(`http://localhost:5000/parts?page=${queryKey[1]}&size=${queryKey[2]}`)
         return data
     }
-
     const { data, isLoading } = useQuery(['parts', page, size], getParts, { keepPreviousData: true })
-    console.log(data)
+
     if (isLoading) {
         return <LoadingSpinner />
     }

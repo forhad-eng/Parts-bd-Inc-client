@@ -24,3 +24,28 @@
     color: white;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
+
+.offers {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    gap: 40px;
+}
+
+.offers .offers-bg {
+    background: rgba(0, 0, 0, 0.7) url('../assets/tire.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    border-radius: 5px;
+    height: 560px;
+    color: white;
+}
+
+.offers .offers-bg p:first-child {
+    margin-top: 40px;
+}
+
+.offers .offers-bg p {
+    margin-bottom: 10px;
+}
