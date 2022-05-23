@@ -4,16 +4,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const PartsCard = ({ parts }) => {
-    const { name, image, price, description, minOrder, available } = parts
+    const { _id, name, image, price, description, minOrder, available } = parts
     return (
         <div class="card bg-base-100 shadow-lg">
             <figure>
                 <img src={image} alt="Shoes" />
             </figure>
             <div class="card-body pt-0">
-                <h2 class="card-title">
-                    {name}
-                </h2>
+                <h2 class="card-title">{name}</h2>
                 <p className="mb-0">{description}</p>
                 <small>
                     Minimum order: <span className="text-orange-600 font-bold">{minOrder} Piece</span>
@@ -23,7 +21,7 @@ const PartsCard = ({ parts }) => {
                 </small>
                 <div className="flex justify-between items-center">
                     <p className="font-bold">${price}</p>
-                    <Link to={``}>
+                    <Link to={`/purchase/${_id}`}>
                         <button className="btn btn-primary btn-sm">
                             Place Order <FontAwesomeIcon className="ml-1" icon={faShoppingCart} />
                         </button>
