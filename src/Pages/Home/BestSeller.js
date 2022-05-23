@@ -9,7 +9,7 @@ const BestSeller = () => {
         const { data } = await axiosPrivate.get(`http://localhost:5000/parts?page=0&size=10}`)
         return data
     }
-    const { data, isLoading } = useQuery(['three-parts'], getParts)
+    const { data, isLoading } = useQuery(['three-parts'], getParts, { keepPreviousData: true })
 
     if (isLoading) {
         return <LoadingSpinner />

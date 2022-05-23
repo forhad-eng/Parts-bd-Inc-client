@@ -25,6 +25,14 @@
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+.deals {
+    background: rgba(0, 0, 0, 0.8) url('../assets/sale.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+}
+
 .offers {
     display: grid;
     grid-template-columns: 2fr 7fr;
@@ -40,6 +48,7 @@
     border-radius: 5px;
     height: 560px;
     color: white;
+    text-align: center;
 }
 
 .offers .offers-bg p:first-child {

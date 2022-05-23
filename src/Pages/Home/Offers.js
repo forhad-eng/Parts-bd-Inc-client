@@ -1,15 +1,34 @@
 import React from 'react'
+import { useQuery } from 'react-query'
 import { Link, Outlet, useLocation } from 'react-router-dom'
+import axiosPrivate from '../../api/axiosPrivate'
+import LoadingSpinner from '../Shared/LoadingSpinner'
+import PartsCard from './PartsCard'
 
 const Offers = () => {
     const { pathname } = useLocation()
+    const getParts = async () => {
+        const { data } = await axiosPrivate.get(`http://localhost:5000/parts?page=0&size=10}`)
+        return data
+    }
+    const { data, isLoading } = useQuery(['all-parts'], getParts, { keepPreviousData: true })
+
+    if (isLoading) {
+        return <LoadingSpinner />
+    }
 
     return (
-        <div className="text-center my-20 max-w-7xl mx-auto lg:px-10">
-            <h1 className="text-3xl font-semibold">Attention! Deal Zone </h1>
-            <p className="text-gray-500">Hurry up! Discounts up to 70% </p>
+        <div className="my-20">
+            <h1 className="text-3xl font-semibold text-center">Attention! Deal Zone </h1>
+            <p className="text-gray-500 text-center">Hurry up! Discounts up to 70% </p>
 
-            <div className="offers mt-14">
+            <div className="deals grid grid-cols-4 gap-10 p-24 mt-10">
+                {data?.data?.slice(4, 8).map(item => (
+                    <PartsCard parts={item} />
+                ))}
+            </div>
+
+            <div className="offers max-w-7xl mx-auto lg:px-10 mt-20">
                 <div className="offers-bg">
                     <h2 className="text-2xl mt-24 mb-6">Tires and Wheels</h2>
                     <p>Brake Kits</p>

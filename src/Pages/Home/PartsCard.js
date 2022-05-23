@@ -13,7 +13,6 @@ const PartsCard = ({ parts }) => {
             <div class="card-body pt-0">
                 <h2 class="card-title">
                     {name}
-                    <div class="badge badge-secondary">NEW</div>
                 </h2>
                 <p className="mb-0">{description}</p>
                 <small>
