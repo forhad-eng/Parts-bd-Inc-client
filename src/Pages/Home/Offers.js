@@ -30,7 +30,8 @@ const Offers = () => {
 
             <div className="offers max-w-7xl mx-auto lg:px-10 mt-20">
                 <div className="offers-bg">
-                    <h2 className="text-2xl mt-24 mb-6">Tires and Wheels</h2>
+                    <h2 className="text-2xl mt-24">Tires and Wheels</h2>
+                    <h2 className="text-2xl mb-6">Accessories</h2>
                     <p>Brake Kits</p>
                     <p>Sensors</p>
                     <p>Tire Chains</p>
