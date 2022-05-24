@@ -23,6 +23,14 @@ const AllUsers = () => {
         }
     }
 
+    const removeUserHandle = async email => {
+        const { data } = await axiosPrivate.delete(`http://localhost:5000/user/${email}`)
+        if (data.success) {
+            refetch()
+            toast.success(data.message)
+        }
+    }
+
     return (
         <div>
             <div class="overflow-x-auto">
@@ -55,7 +63,12 @@ const AllUsers = () => {
                                     )}
                                 </td>
                                 <td>
-                                    <button className="btn btn-error btn-xs">Remove User</button>
+                                    <button
+                                        onClick={() => removeUserHandle(user.email)}
+                                        className="btn btn-error btn-xs"
+                                    >
+                                        Remove User
+                                    </button>
                                 </td>
                             </tr>
                         ))}
