@@ -13,7 +13,7 @@ const MyOrders = () => {
 
     const getOrders = async () => {
         if (user) {
-            const { data } = await axiosPrivate.get(`http://localhost:5000/order/${user.email}`)
+            const { data } = await axiosPrivate.get(`http://localhost:5000/order/user/${user.email}`)
             return data
         }
     }

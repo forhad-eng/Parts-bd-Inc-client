@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const MyOrderRow = ({ order, setOrder, index }) => {
-    const { partsName, quantity, amount, paid } = order
+    const { _id, partsName, quantity, amount, paid } = order
 
     return (
         <tr>
@@ -9,7 +10,15 @@ const MyOrderRow = ({ order, setOrder, index }) => {
             <td>{partsName}</td>
             <td>{quantity}</td>
             <td>{amount}</td>
-            <td>{paid ? 'Paid' : <button className="btn btn-success btn-xs">Pay Now</button>}</td>
+            <td>
+                {paid ? (
+                    'Paid'
+                ) : (
+                    <Link to={`/dashboard/payment/${_id}`}>
+                        <button className="btn btn-success btn-xs">Pay Now</button>
+                    </Link>
+                )}
+            </td>
             <td>
                 <label onClick={() => setOrder(order)} for="cancel-order" class="btn btn-xs">
                     Cancel

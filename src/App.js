@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import MyOrders from './Pages/Dashboard/MyOrders'
 import MyProfile from './Pages/Dashboard/MyProfile'
+import Payment from './Pages/Dashboard/Payment'
 import UpdateProfile from './Pages/Dashboard/UpdateProfile'
 import BestSeller from './Pages/Home/BestSeller'
 import Home from './Pages/Home/Home'
@@ -40,8 +41,9 @@ function App() {
                     }
                 >
                     <Route index element={<MyProfile />} />
-                    <Route path='my-orders' element={<MyOrders/>} />
                     <Route path="user/update-profile" element={<UpdateProfile />} />
+                    <Route path="my-orders" element={<MyOrders />} />
+                    <Route path="payment/:id" element={<Payment />} />
                 </Route>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
