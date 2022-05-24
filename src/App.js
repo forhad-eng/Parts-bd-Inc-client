@@ -13,6 +13,7 @@ import Home from './Pages/Home/Home'
 import Review from './Pages/Home/Review'
 import TopRated from './Pages/Home/TopRated'
 import Login from './Pages/Login/Login'
+import RequireAdmin from './Pages/Login/RequireAdmin'
 import RequireAuth from './Pages/Login/RequireAuth'
 import SignUp from './Pages/Login/SignUp'
 import Purchase from './Pages/Purchase/Purchase'
@@ -45,7 +46,14 @@ function App() {
                     }
                 >
                     <Route index element={<MyProfile />} />
-                    <Route path="all-users" element={<AllUsers/>} />
+                    <Route
+                        path="all-users"
+                        element={
+                            <RequireAdmin>
+                                <AllUsers />
+                            </RequireAdmin>
+                        }
+                    />
                     <Route path="user/update-profile" element={<UpdateProfile />} />
                     <Route path="my-orders" element={<MyOrders />} />
                     <Route path="add-review" element={<AddReview />} />

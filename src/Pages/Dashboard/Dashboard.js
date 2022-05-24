@@ -32,9 +32,20 @@ const Dashboard = () => {
                         </Link>
                     </li>
                     {admin && (
-                        <li>
-                            <Link to="all-users">All Users</Link>
-                        </li>
+                        <>
+                            <li>
+                                <Link to="all-users">All Users</Link>
+                            </li>
+                            <li>
+                                <Link to="all-users">Manage All Orders</Link>
+                            </li>
+                            <li>
+                                <Link to="all-users">Manage Products</Link>
+                            </li>
+                            <li>
+                                <Link to="all-users">Add Products</Link>
+                            </li>
+                        </>
                     )}
                     {!admin && (
                         <>
