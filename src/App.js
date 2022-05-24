@@ -12,6 +12,7 @@ import MyProfile from './Pages/Dashboard/MyProfile'
 import Payment from './Pages/Dashboard/Payment'
 import UpdateProfile from './Pages/Dashboard/UpdateProfile'
 import BestSeller from './Pages/Home/BestSeller'
+import Blogs from './Pages/Home/Blogs'
 import Home from './Pages/Home/Home'
 import Review from './Pages/Home/Review'
 import TopRated from './Pages/Home/TopRated'
@@ -20,6 +21,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin'
 import RequireAuth from './Pages/Login/RequireAuth'
 import SignUp from './Pages/Login/SignUp'
 import Purchase from './Pages/Purchase/Purchase'
+import Footer from './Pages/Shared/Footer'
 import Navbar from './Pages/Shared/Navbar'
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
                     <Route path="top-rated" element={<TopRated />} />
                 </Route>
                 <Route path="/review" element={<Review />} />
+                <Route path="/blogs" element={<Blogs />} />
                 <Route
                     path="/purchase/:id"
                     element={
@@ -89,6 +92,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
             </Routes>
+            <Footer />
             <ToastContainer />
         </div>
     )

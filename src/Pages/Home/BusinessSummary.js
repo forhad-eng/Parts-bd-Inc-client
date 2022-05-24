@@ -10,7 +10,7 @@ const BusinessSummary = () => {
             <p p className="w-fit mx-auto border-b-[1px] border-primary">
                 Get Insight
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 my-14 md:mb-20 md:px-24 text-center">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 my-14 md:mt-16 md:mb-24 md:px-24 text-center">
                 <div>
                     <FontAwesomeIcon icon={faUserAlt} className="w-6 h-6 text-secondary bg-gray-100 rounded-full p-3" />
                     <p className="uppercase text-md font-[600] mt-2">Served Customer</p>
