@@ -1,6 +1,8 @@
 import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
+import axiosPrivate from '../../api/axiosPrivate'
 import auth from '../../Firebase/firebase.init'
 import useUser from '../../hooks/useUser'
 
@@ -8,13 +10,14 @@ const UpdateProfile = () => {
     const [user] = useAuthState(auth)
     const [userDetails, setUserDetails] = useUser(user)
     const { email, name } = userDetails
-    const {
-        register,
-        handleSubmit,
-        formState: { errors }
-    } = useForm()
+    const { register, handleSubmit } = useForm()
 
-    const onSubmit = data => console.log(data)
+    const onSubmit = async formData => {
+        const { data } = await axiosPrivate.patch(`http://localhost:5000/user/${email}`, formData)
+        if (data.success) {
+            toast.success(data.message)
+        }
+    }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="shadow rounded-xl pl-10 pb-10">
