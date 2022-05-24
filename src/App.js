@@ -1,6 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Dashboard from './Pages/Dashboard/Dashboard'
+import MyProfile from './Pages/Dashboard/MyProfile'
+import UpdateProfile from './Pages/Dashboard/UpdateProfile'
 import BestSeller from './Pages/Home/BestSeller'
 import Home from './Pages/Home/Home'
 import TopRated from './Pages/Home/TopRated'
@@ -27,6 +30,17 @@ function App() {
                         </RequireAuth>
                     }
                 />
+                <Route
+                    path="/dashboard"
+                    element={
+                        <RequireAuth>
+                            <Dashboard />
+                        </RequireAuth>
+                    }
+                >
+                    <Route index element={<MyProfile />} />
+                    <Route path="user/update-profile" element={<UpdateProfile />} />
+                </Route>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
             </Routes>

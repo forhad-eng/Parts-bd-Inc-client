@@ -29,9 +29,14 @@ const Navbar = () => {
                 <Link to="/">Blog</Link>
             </li>
             {user ? (
-                <li>
-                    <button onClick={signOutHandle}>Sign Out</button>
-                </li>
+                <>
+                    <li>
+                        <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
+                        <button onClick={signOutHandle}>Sign Out</button>
+                    </li>
+                </>
             ) : (
                 <li>
                     <Link to="/login">Login</Link>
@@ -68,7 +73,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to="/" className="btn btn-ghost normal-case text-xl">
-                    PARTSBD INC
+                    PARTS<span className="text-primary">BD</span>&nbsp;INC
                 </Link>
             </div>
             <div className="navbar-end hidden lg:flex">
