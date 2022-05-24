@@ -12,7 +12,7 @@ const MyOrderRow = ({ order, setOrder, index }) => {
             <td>{amount}</td>
             <td>
                 {paid ? (
-                    'Paid'
+                    <p className="text-success">Paid</p>
                 ) : (
                     <Link to={`/dashboard/payment/${_id}`}>
                         <button className="btn btn-success btn-xs">Pay Now</button>
@@ -20,9 +20,11 @@ const MyOrderRow = ({ order, setOrder, index }) => {
                 )}
             </td>
             <td>
-                <label onClick={() => setOrder(order)} for="cancel-order" class="btn btn-xs">
-                    Cancel
-                </label>
+                {!paid && (
+                    <label onClick={() => setOrder(order)} for="cancel-order" class="btn btn-xs">
+                        Cancel
+                    </label>
+                )}
             </td>
         </tr>
     )

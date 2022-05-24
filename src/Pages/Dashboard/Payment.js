@@ -1,7 +1,10 @@
+import { Elements } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
 import React from 'react'
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import axiosPrivate from '../../api/axiosPrivate'
+import CheckoutForm from '../Dashboard/CheckoutForm'
 import LoadingSpinner from '../Shared/LoadingSpinner'
 
 const Payment = () => {
@@ -16,7 +19,11 @@ const Payment = () => {
     if (isLoading) {
         return <LoadingSpinner />
     }
-    const { _id, name, partsName, quantity, amount, paid } = data
+    const { name, partsName, quantity, amount } = data
+
+    const stripePromise = loadStripe(
+        'pk_test_51L0VcfAnKHpPDONQvKZOdQdxd6pmUAxkviJRpt94NGZyOn1jVgDBdg6aGIjrP8gw4E5oGLGTpMHhjW2Jjacaroie00lZkaxl0c'
+    )
 
     return (
         <div>
@@ -32,6 +39,14 @@ const Payment = () => {
                     <p>
                         Amount to pay: <span className="text-orange-600 font-bold">${amount}</span>
                     </p>
+                </div>
+            </div>
+
+            <div class="card w-96 bg-base-100 shadow-lg mt-6">
+                <div class="card-body pt-4">
+                    <Elements stripe={stripePromise}>
+                        <CheckoutForm order={data} />
+                    </Elements>
                 </div>
             </div>
         </div>
