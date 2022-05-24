@@ -37,13 +37,13 @@ const Dashboard = () => {
                                 <Link to="all-users">All Users</Link>
                             </li>
                             <li>
-                                <Link to="all-users">Manage All Orders</Link>
+                                <Link to="manage-orders">Manage All Orders</Link>
                             </li>
                             <li>
-                                <Link to="all-users">Manage Products</Link>
+                                <Link to="manage-products">Manage Products</Link>
                             </li>
                             <li>
-                                <Link to="all-users">Add Products</Link>
+                                <Link to="add-product">Add Product</Link>
                             </li>
                         </>
                     )}

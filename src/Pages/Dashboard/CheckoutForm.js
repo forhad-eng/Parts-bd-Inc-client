@@ -57,7 +57,7 @@ const CheckoutForm = ({ order }) => {
                 transactionId: paymentIntent.id
             }
 
-            const { data } = await axiosPrivate.patch(`http://localhost:5000/order/${_id}`, payment)
+            const { data } = await axiosPrivate.put(`http://localhost:5000/order/${_id}`, payment)
             if (data.success) {
                 toast.success('Your payment is confirmed', { toastId: 'payment-confirm' })
                 setTransactionId(paymentIntent.id)
