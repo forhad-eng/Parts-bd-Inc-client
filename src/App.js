@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Dashboard from './Pages/Dashboard/Dashboard'
+import MyOrders from './Pages/Dashboard/MyOrders'
 import MyProfile from './Pages/Dashboard/MyProfile'
 import UpdateProfile from './Pages/Dashboard/UpdateProfile'
 import BestSeller from './Pages/Home/BestSeller'
@@ -39,6 +40,7 @@ function App() {
                     }
                 >
                     <Route index element={<MyProfile />} />
+                    <Route path='my-orders' element={<MyOrders/>} />
                     <Route path="user/update-profile" element={<UpdateProfile />} />
                 </Route>
                 <Route path="/login" element={<Login />} />

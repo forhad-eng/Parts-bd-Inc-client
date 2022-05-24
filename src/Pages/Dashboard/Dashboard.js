@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 
 const Dashboard = () => {
+    const { pathname } = useLocation()
+
     return (
         <div class="drawer drawer-mobile max-w-7xl mx-auto lg:px-10">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -15,7 +17,7 @@ const Dashboard = () => {
                 <label for="my-drawer-2" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                     <li>
-                        <Link to="/dashboard" className="bg-primary text-white">
+                        <Link to="/dashboard" className={`${pathname === '/dashboard' && 'bg-primary text-white'}`}>
                             My Profile
                         </Link>
                     </li>
