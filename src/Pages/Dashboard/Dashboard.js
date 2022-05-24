@@ -1,8 +1,18 @@
 import React from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
 import { Link, Outlet, useLocation } from 'react-router-dom'
+import auth from '../../Firebase/firebase.init'
+import useAdmin from '../../hooks/useAdmin'
+import LoadingSpinner from '../Shared/LoadingSpinner'
 
 const Dashboard = () => {
     const { pathname } = useLocation()
+    const [user, loading] = useAuthState(auth)
+    const [admin, adminLoading] = useAdmin(user)
+
+    if (loading || adminLoading) {
+        return <LoadingSpinner />
+    }
 
     return (
         <div class="drawer drawer-mobile max-w-7xl mx-auto lg:px-10">
@@ -21,6 +31,11 @@ const Dashboard = () => {
                             My Profile
                         </Link>
                     </li>
+                    {admin && (
+                        <li>
+                            <Link to="all-users">All Users</Link>
+                        </li>
+                    )}
                     <li>
                         <Link to="my-orders">My Orders</Link>
                     </li>
