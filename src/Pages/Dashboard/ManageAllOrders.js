@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useQuery } from 'react-query'
 import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import LoadingSpinner from '../Shared/LoadingSpinner'
 
 const ManageAllOrders = () => {
+    const [order, setOrder] = useState(null)
     const getUsers = async () => {
         const { data } = await axiosPrivate.get('http://localhost:5000/order')
         return data
@@ -66,18 +67,49 @@ const ManageAllOrders = () => {
                                         </button>
                                     )}
                                     {!item.paid && (
-                                        <button
-                                            onClick={() => cancelOrderHandle(item._id)}
-                                            className="btn btn-error btn-xs"
+                                        <label
+                                            onClick={() => setOrder(item)}
+                                            for="admin-cancel-order"
+                                            class="btn btn-xs"
                                         >
-                                            Cancel Order
-                                        </button>
+                                            Cancel
+                                        </label>
                                     )}
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
+            </div>
+            {order && <CancelOrder order={order} cancelOrderHandle={cancelOrderHandle} />}
+        </div>
+    )
+}
+
+const CancelOrder = ({ order, cancelOrderHandle }) => {
+    const { partsName, _id } = order
+
+    return (
+        <div>
+            <input type="checkbox" id="admin-cancel-order" class="modal-toggle" />
+            <div class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                    <label for="admin-cancel-order" class="btn btn-sm btn-circle absolute right-2 top-2">
+                        ✕
+                    </label>
+                    <h3 class="font-bold text-lg">Are you sure?</h3>
+                    <p class="py-4">
+                        You want to cancel <span className="font-bold">{partsName}</span> order?
+                    </p>
+                    <div class="modal-action">
+                        <label onClick={() => cancelOrderHandle(_id)} for="admin-cancel-order" class="btn">
+                            Yes
+                        </label>
+                        <label for="admin-cancel-order" class="btn">
+                            No
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
     )
