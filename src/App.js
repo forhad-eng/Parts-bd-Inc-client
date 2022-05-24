@@ -9,6 +9,7 @@ import Payment from './Pages/Dashboard/Payment'
 import UpdateProfile from './Pages/Dashboard/UpdateProfile'
 import BestSeller from './Pages/Home/BestSeller'
 import Home from './Pages/Home/Home'
+import Review from './Pages/Home/Review'
 import TopRated from './Pages/Home/TopRated'
 import Login from './Pages/Login/Login'
 import RequireAuth from './Pages/Login/RequireAuth'
@@ -25,6 +26,7 @@ function App() {
                     <Route index element={<BestSeller />} />
                     <Route path="top-rated" element={<TopRated />} />
                 </Route>
+                <Route path="/review" element={<Review />} />
                 <Route
                     path="/purchase/:id"
                     element={
