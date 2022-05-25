@@ -1,0 +1,43 @@
+.about-me {
+    background-image: url('../assets/about-me-banner.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(120vh);
+}
+
+.connect img {
+    width: 30px;
+    height: 30px;
+}
+
+.developer img {
+    width: 350px;
+    margin: 50px auto;
+}
+
+@media only screen and (max-width: 380px) {
+    .about-me {
+        height: calc(190vh);
+        background-position: inherit;
+    }
+}
+@media only screen and (min-width: 381px) and (max-width: 576px) {
+    .about-me {
+        height: calc(180vh);
+        background-position: inherit;
+    }
+    .developer img {
+        margin: 0px auto;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 820px) {
+    .about-me {
+        height: calc(100vh - 200px);
+        background-position: inherit;
+    }
+    .developer img {
+        margin: 10px auto;
+    }
+}

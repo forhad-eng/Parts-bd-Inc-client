@@ -14,6 +14,7 @@ import UpdateProfile from './Pages/Dashboard/UpdateProfile'
 import BestSeller from './Pages/Home/BestSeller'
 import Blogs from './Pages/Home/Blogs'
 import Home from './Pages/Home/Home'
+import MyPortfolio from './Pages/Home/MyPortfolio'
 import Review from './Pages/Home/Review'
 import TopRated from './Pages/Home/TopRated'
 import Login from './Pages/Login/Login'
@@ -35,6 +36,7 @@ function App() {
                 </Route>
                 <Route path="/review" element={<Review />} />
                 <Route path="/blogs" element={<Blogs />} />
+                <Route path="/my-portfolio" element={<MyPortfolio/>} />
                 <Route
                     path="/purchase/:id"
                     element={
