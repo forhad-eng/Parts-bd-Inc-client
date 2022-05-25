@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const MyOrderRow = ({ order, setOrder, index }) => {
-    const { _id, partsName, quantity, amount, paid, transactionId } = order
+    const { _id, partsName, quantity, amount, paid, status, transactionId } = order
 
     return (
         <tr>
@@ -22,6 +22,7 @@ const MyOrderRow = ({ order, setOrder, index }) => {
                     </Link>
                 )}
             </td>
+            <td>{status}</td>
             <td>
                 {!paid && (
                     <label onClick={() => setOrder(order)} for="cancel-order" class="btn btn-xs">

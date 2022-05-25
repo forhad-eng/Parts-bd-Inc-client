@@ -22,7 +22,12 @@ const MyPortfolio = () => {
                     <ul className="list-decimal pl-8">
                         <li className="text-sm">
                             <span className="font-bold">NextGen Automobiles</span> |
-                            <a className="text-blue-600" href="https://nextgen-automobiles.web.app/">
+                            <a
+                                className="text-blue-600"
+                                href="https://nextgen-automobiles.web.app/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 {' '}
                                 WEBSITE{' '}
                             </a>
@@ -30,6 +35,8 @@ const MyPortfolio = () => {
                             <a
                                 className="text-blue-600"
                                 href="https://github.com/forhad-eng/nextgen-automobiles-client.git"
+                                target="_blank"
+                                rel="noreferrer"
                             >
                                 {' '}
                                 GITHUB (CLIENT)
@@ -38,6 +45,8 @@ const MyPortfolio = () => {
                             <a
                                 className="text-blue-600"
                                 href="https://github.com/forhad-eng/nextgen-automobiles-server.git"
+                                target="_blank"
+                                rel="noreferrer"
                             >
                                 GITHUB (SERVER)
                             </a>
@@ -53,12 +62,22 @@ const MyPortfolio = () => {
 
                         <li className="text-sm">
                             <span className="font-bold">Wellbeing Dental</span> |
-                            <a className="text-blue-600" href="https://wellbeing-dental.web.app/">
+                            <a
+                                className="text-blue-600"
+                                href="https://wellbeing-dental.web.app/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 {' '}
                                 WEBSITE{' '}
                             </a>
                             |
-                            <a className="text-blue-600" href="https://github.com/forhad-eng/welbeing-dental">
+                            <a
+                                className="text-blue-600"
+                                href="https://github.com/forhad-eng/welbeing-dental"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 {' '}
                                 GITHUB
                             </a>
@@ -69,7 +88,12 @@ const MyPortfolio = () => {
                         </li>
                         <li className="text-sm">
                             <span className="font-bold">React Quiz Application</span> |
-                            <a className="text-blue-600" href="https://dashing-gelato-2982e1.netlify.app/">
+                            <a
+                                className="text-blue-600"
+                                href="https://dashing-gelato-2982e1.netlify.app/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 {' '}
                                 WEBSITE{' '}
                             </a>
@@ -77,6 +101,8 @@ const MyPortfolio = () => {
                             <a
                                 className="text-blue-600"
                                 href="https://github.com/forhad-eng/React-Quiz-Application.git"
+                                target="_blank"
+                                rel="noreferrer"
                             >
                                 {' '}
                                 GITHUB
