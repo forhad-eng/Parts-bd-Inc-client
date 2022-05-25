@@ -46,7 +46,6 @@
     background-repeat: no-repeat;
     background-blend-mode: darken;
     border-radius: 5px;
-    height: 560px;
     color: white;
     text-align: center;
 }
@@ -79,6 +78,9 @@
         gap: 20px;
         padding: 0 28px;
     }
+    .offers .offers-bg {
+        height: 500px;
+    }
 }
 
 @media only screen and (min-width: 381px) and (max-width: 576px) {
@@ -97,5 +99,8 @@
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 0 28px;
+    }
+    .offers .offers-bg {
+        height: 500px;
     }
 }
