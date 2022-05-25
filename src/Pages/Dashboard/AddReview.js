@@ -18,7 +18,7 @@ const AddReview = () => {
             description
         }
 
-        const { data } = await axiosPrivate.post('http://localhost:5000/review', review)
+        const { data } = await axiosPrivate.post('https://young-brushlands-57803.herokuapp.com/review', review)
         if (data.success) {
             e.target.reset()
             toast.success(data.message)

@@ -3,10 +3,10 @@ import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 
 const CancelModal = ({ order, refetch }) => {
-    const { partsName, _id} = order
+    const { partsName, _id } = order
 
     const orderCancelHandle = async () => {
-        const { data } = await axiosPrivate.delete(`http://localhost:5000/order/${_id}`)
+        const { data } = await axiosPrivate.delete(`https://young-brushlands-57803.herokuapp.com/order/${_id}`)
         if (data.success) {
             refetch()
             toast.success(data.message)

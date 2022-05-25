@@ -6,7 +6,7 @@ import LoadingSpinner from '../Shared/LoadingSpinner'
 
 const Review = () => {
     const getReviews = async () => {
-        const { data } = await axiosPrivate.get('http://localhost:5000/review')
+        const { data } = await axiosPrivate.get('https://young-brushlands-57803.herokuapp.com/review')
         return data
     }
 

@@ -24,7 +24,7 @@ const Purchase = () => {
 
     useEffect(() => {
         const getParts = async () => {
-            const { data } = await axiosPrivate.get(`http://localhost:5000/parts/${id}`)
+            const { data } = await axiosPrivate.get(`https://young-brushlands-57803.herokuapp.com/parts/${id}`)
             if (data) {
                 setParts(data)
                 setQuantity(data.minOrder)
@@ -54,7 +54,7 @@ const Purchase = () => {
             paid: false
         }
 
-        const { data: result } = await axiosPrivate.post('http://localhost:5000/order', order)
+        const { data: result } = await axiosPrivate.post('https://young-brushlands-57803.herokuapp.com/order', order)
         if (result.success) {
             toast.success(result.message, { toastId: 'orderConfirmed' })
             reset()

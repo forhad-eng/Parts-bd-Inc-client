@@ -7,7 +7,7 @@ import LoadingSpinner from '../Shared/LoadingSpinner'
 const ManageAllOrders = () => {
     const [order, setOrder] = useState(null)
     const getUsers = async () => {
-        const { data } = await axiosPrivate.get('http://localhost:5000/order')
+        const { data } = await axiosPrivate.get('https://young-brushlands-57803.herokuapp.com/order')
         return data
     }
     const { data, isLoading, refetch } = useQuery('all-orders', getUsers)
@@ -17,7 +17,7 @@ const ManageAllOrders = () => {
     }
 
     const updateToShipped = async _id => {
-        const { data } = await axiosPrivate.patch(`http://localhost:5000/order/${_id}`)
+        const { data } = await axiosPrivate.patch(`https://young-brushlands-57803.herokuapp.com/order/${_id}`)
         if (data.success) {
             refetch()
             toast.success(data.message)
@@ -25,7 +25,7 @@ const ManageAllOrders = () => {
     }
 
     const cancelOrderHandle = async _id => {
-        const { data } = await axiosPrivate.delete(`http://localhost:5000/order/${_id}`)
+        const { data } = await axiosPrivate.delete(`https://young-brushlands-57803.herokuapp.com/order/${_id}`)
         if (data.success) {
             refetch()
             toast.success(data.message)

@@ -27,7 +27,10 @@ const AddProduct = () => {
                 ...data,
                 image: imageUrl
             }
-            const { data: updatedData } = await axiosPrivate.post('http://localhost:5000/parts', newProduct)
+            const { data: updatedData } = await axiosPrivate.post(
+                'https://young-brushlands-57803.herokuapp.com/parts',
+                newProduct
+            )
             if (updatedData.success) {
                 reset()
                 toast.success(updatedData.message, { toastId: 'product-add-success' })

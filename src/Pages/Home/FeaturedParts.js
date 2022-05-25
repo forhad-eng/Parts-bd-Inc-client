@@ -11,7 +11,9 @@ const FeaturedParts = () => {
     const [size, setSize] = useState(3)
 
     const getParts = async ({ queryKey }) => {
-        const { data } = await axiosPrivate.get(`http://localhost:5000/parts?page=${queryKey[1]}&size=${queryKey[2]}`)
+        const { data } = await axiosPrivate.get(
+            `https://young-brushlands-57803.herokuapp.com/parts?page=${queryKey[1]}&size=${queryKey[2]}`
+        )
         return data
     }
     const { data, isLoading } = useQuery(['parts', page, size], getParts, { keepPreviousData: true })

@@ -8,7 +8,10 @@ const useToken = user => {
         const getToken = async () => {
             if (user) {
                 const { email, displayName } = user?.user
-                const { data } = await axios.put(`http://localhost:5000/user/${email}`, { email, name: displayName })
+                const { data } = await axios.put(`https://young-brushlands-57803.herokuapp.com/user/${email}`, {
+                    email,
+                    name: displayName
+                })
                 setToken(data.accessToken)
                 localStorage.setItem('accessToken', data.accessToken)
             }

@@ -29,7 +29,10 @@ const MyProfile = () => {
             linkedIn
         }
 
-        const { data } = await axiosPrivate.put(`http://localhost:5000/user/update/${email}`, updatedField)
+        const { data } = await axiosPrivate.put(
+            `https://young-brushlands-57803.herokuapp.com/user/update/${email}`,
+            updatedField
+        )
         if (data.success) {
             toast.success(data.message)
         }

@@ -17,7 +17,10 @@ const UpdateProfile = () => {
             ...formData,
             email
         }
-        const { data } = await axiosPrivate.put(`http://localhost:5000/user/update/${email}`, updatedUser)
+        const { data } = await axiosPrivate.put(
+            `https://young-brushlands-57803.herokuapp.com/user/update/${email}`,
+            updatedUser
+        )
         if (data.success) {
             toast.success(data.message)
         }

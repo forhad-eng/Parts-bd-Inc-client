@@ -13,7 +13,10 @@ const CheckoutForm = ({ order }) => {
 
     useEffect(() => {
         const getClientSecret = async () => {
-            const { data } = await axiosPrivate.post('http://localhost:5000/create-payment-intent', order)
+            const { data } = await axiosPrivate.post(
+                'https://young-brushlands-57803.herokuapp.com/create-payment-intent',
+                order
+            )
             setClientSecret(data.clientSecret)
         }
         getClientSecret()
@@ -57,7 +60,10 @@ const CheckoutForm = ({ order }) => {
                 transactionId: paymentIntent.id
             }
 
-            const { data } = await axiosPrivate.put(`http://localhost:5000/order/${_id}`, payment)
+            const { data } = await axiosPrivate.put(
+                `https://young-brushlands-57803.herokuapp.com/order/${_id}`,
+                payment
+            )
             if (data.success) {
                 toast.success('Your payment is confirmed', { toastId: 'payment-confirm' })
                 setTransactionId(paymentIntent.id)

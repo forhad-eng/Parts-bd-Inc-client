@@ -6,10 +6,10 @@ import LoadingSpinner from '../Shared/LoadingSpinner'
 
 const TopRated = () => {
     const getParts = async () => {
-        const { data } = await axiosPrivate.get(`http://localhost:5000/parts?page=0&size=10}`)
+        const { data } = await axiosPrivate.get(`https://young-brushlands-57803.herokuapp.com/parts?page=0&size=10}`)
         return data
     }
-    const { data, isLoading } = useQuery(['three-parts'], getParts, {keepPreviousData: true})
+    const { data, isLoading } = useQuery(['three-parts'], getParts, { keepPreviousData: true })
 
     if (isLoading) {
         return <LoadingSpinner />
