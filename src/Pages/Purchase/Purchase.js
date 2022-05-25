@@ -1,16 +1,19 @@
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
 import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
+import { PartsIdContext } from '../../App'
 import auth from '../../Firebase/firebase.init'
 
 const Purchase = () => {
     const [user] = useAuthState(auth)
     const { id } = useParams()
+    const { setPartsId } = useContext(PartsIdContext)
+    setPartsId(id)
     const [parts, setParts] = useState({})
     const { name, available, image, minOrder, price, _id } = parts
     const [quantity, setQuantity] = useState(0)

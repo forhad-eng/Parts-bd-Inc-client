@@ -1,13 +1,29 @@
 import { signOut } from 'firebase/auth'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { PartsIdContext } from '../../App'
 import auth from '../../Firebase/firebase.init'
 
 const Navbar = () => {
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
-    const { pathname } = useLocation()
+    const { partsId } = useContext(PartsIdContext)
+    const { pathname: p } = useLocation()
+    let path = false
+
+    if (
+        p === '/' ||
+        p === '/review' ||
+        p === '/blogs' ||
+        p === '/my-portfolio' ||
+        p === '/dashboard' ||
+        p === '/dashboard/my-orders' ||
+        p === '/dashboard/add-review' ||
+        p === `/purchase/${partsId}`
+    ) {
+        path = true
+    }
 
     const signOutHandle = () => {
         signOut(auth)
@@ -47,7 +63,7 @@ const Navbar = () => {
     )
 
     return (
-        <div className="navbar bg-base-100 max-w-7xl mx-auto lg:px-10">
+        <div className={`navbar bg-base-100 max-w-7xl mx-auto lg:px-10 ${path ? '' : 'hidden'}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -80,9 +96,7 @@ const Navbar = () => {
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">{menuItems}</ul>
             </div>
-            {(pathname === '/dashboard' ||
-                pathname === '/dashboard/my-orders' ||
-                pathname === '/dashboard/add-review') && (
+            {(p === '/dashboard' || p === '/dashboard/my-orders' || p === '/dashboard/add-review') && (
                 <div className="navbar-end flex lg:hidden">
                     <label for="dashboard-drawer" tabIndex="1" className="btn btn-ghost lg:hidden">
                         <svg

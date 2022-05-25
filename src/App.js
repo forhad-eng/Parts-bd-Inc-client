@@ -1,3 +1,4 @@
+import { createContext, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -24,79 +25,87 @@ import SignUp from './Pages/Login/SignUp'
 import Purchase from './Pages/Purchase/Purchase'
 import Footer from './Pages/Shared/Footer'
 import Navbar from './Pages/Shared/Navbar'
+import NotFound from './Pages/Shared/NotFound'
+
+export const PartsIdContext = createContext()
 
 function App() {
+    const [partsId, setPartsId] = useState('')
+
     return (
-        <div>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />}>
-                    <Route index element={<BestSeller />} />
-                    <Route path="top-rated" element={<TopRated />} />
-                </Route>
-                <Route path="/review" element={<Review />} />
-                <Route path="/blogs" element={<Blogs />} />
-                <Route path="/my-portfolio" element={<MyPortfolio/>} />
-                <Route
-                    path="/purchase/:id"
-                    element={
-                        <RequireAuth>
-                            <Purchase />
-                        </RequireAuth>
-                    }
-                />
-                <Route
-                    path="/dashboard"
-                    element={
-                        <RequireAuth>
-                            <Dashboard />
-                        </RequireAuth>
-                    }
-                >
-                    <Route index element={<MyProfile />} />
+        <PartsIdContext.Provider value={{ partsId, setPartsId }}>
+            <div>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />}>
+                        <Route index element={<BestSeller />} />
+                        <Route path="top-rated" element={<TopRated />} />
+                    </Route>
+                    <Route path="/review" element={<Review />} />
+                    <Route path="/blogs" element={<Blogs />} />
+                    <Route path="/my-portfolio" element={<MyPortfolio />} />
                     <Route
-                        path="all-users"
+                        path="/purchase/:id"
                         element={
-                            <RequireAdmin>
-                                <AllUsers />
-                            </RequireAdmin>
+                            <RequireAuth>
+                                <Purchase />
+                            </RequireAuth>
                         }
                     />
                     <Route
-                        path="manage-orders"
+                        path="/dashboard"
                         element={
-                            <RequireAdmin>
-                                <ManageAllOrders />
-                            </RequireAdmin>
+                            <RequireAuth>
+                                <Dashboard />
+                            </RequireAuth>
                         }
-                    />
-                    <Route
-                        path="manage-products"
-                        element={
-                            <RequireAdmin>
-                                <ManageProducts />
-                            </RequireAdmin>
-                        }
-                    />
-                    <Route
-                        path="add-product"
-                        element={
-                            <RequireAdmin>
-                                <AddProduct />
-                            </RequireAdmin>
-                        }
-                    />
-                    <Route path="user/update-profile" element={<UpdateProfile />} />
-                    <Route path="my-orders" element={<MyOrders />} />
-                    <Route path="add-review" element={<AddReview />} />
-                    <Route path="payment/:id" element={<Payment />} />
-                </Route>
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<SignUp />} />
-            </Routes>
-            <Footer />
-            <ToastContainer />
-        </div>
+                    >
+                        <Route index element={<MyProfile />} />
+                        <Route
+                            path="all-users"
+                            element={
+                                <RequireAdmin>
+                                    <AllUsers />
+                                </RequireAdmin>
+                            }
+                        />
+                        <Route
+                            path="manage-orders"
+                            element={
+                                <RequireAdmin>
+                                    <ManageAllOrders />
+                                </RequireAdmin>
+                            }
+                        />
+                        <Route
+                            path="manage-products"
+                            element={
+                                <RequireAdmin>
+                                    <ManageProducts />
+                                </RequireAdmin>
+                            }
+                        />
+                        <Route
+                            path="add-product"
+                            element={
+                                <RequireAdmin>
+                                    <AddProduct />
+                                </RequireAdmin>
+                            }
+                        />
+                        <Route path="user/update-profile" element={<UpdateProfile />} />
+                        <Route path="my-orders" element={<MyOrders />} />
+                        <Route path="add-review" element={<AddReview />} />
+                        <Route path="payment/:id" element={<Payment />} />
+                    </Route>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+                <Footer />
+                <ToastContainer />
+            </div>
+        </PartsIdContext.Provider>
     )
 }
 

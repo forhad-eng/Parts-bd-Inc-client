@@ -1,9 +1,27 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { PartsIdContext } from '../../App'
 
 const Footer = () => {
+    const { partsId } = useContext(PartsIdContext)
+    const { pathname: p } = useLocation()
+    let path = false
+
+    if (
+        p === '/' ||
+        p === '/review' ||
+        p === '/blogs' ||
+        p === '/my-portfolio' ||
+        p === '/dashboard' ||
+        p === '/dashboard/my-orders' ||
+        p === '/dashboard/add-review' ||
+        p === `/purchase/${partsId}`
+    ) {
+        path = true
+    }
+
     return (
-        <footer className={`bg-[#333333]`}>
+        <footer className={`bg-[#333333] ${path ? 'block' : 'hidden'}`}>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto lg:px-10 py-14 text-white">
                 <div>
                     <div>
