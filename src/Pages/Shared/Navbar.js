@@ -19,9 +19,18 @@ const Navbar = () => {
         p === '/top-rated' ||
         p === '/my-portfolio' ||
         p === '/dashboard' ||
+        p === '/dashboard/user/update-profile' ||
         p === '/dashboard/my-orders' ||
         p === '/dashboard/add-review' ||
-        p === `/purchase/${partsId}`
+        p === '/dashboard/all-users' ||
+        p === '/dashboard/manage-orders' ||
+        p === '/dashboard/manage-products' ||
+        p === '/dashboard/add-product' ||
+        p === '/dashboard/pending-orders' ||
+        p === '/dashboard/shipped-orders' ||
+        p === '/dashboard/unpaid-orders' ||
+        p === `/purchase/${partsId}` ||
+        p === `/dashboard/payment/${partsId}`
     ) {
         path = true
     }

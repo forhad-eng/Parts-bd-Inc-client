@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import AddProduct from './Pages/Dashboard/AddProduct'
 import AddReview from './Pages/Dashboard/AddReview'
+import AllPendingShippedUnpaidOrders from './Pages/Dashboard/AllPendingShippedUnpaidOrders'
 import AllUsers from './Pages/Dashboard/AllUsers'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders'
@@ -41,7 +42,7 @@ function App() {
                         <Route index element={<BestSeller />} />
                         <Route path="top-rated" element={<TopRated />} />
                     </Route>
-                    <Route path="/review" element={<AllReview/>} />
+                    <Route path="/review" element={<AllReview />} />
                     <Route path="/blogs" element={<Blogs />} />
                     <Route path="/my-portfolio" element={<MyPortfolio />} />
                     <Route
@@ -74,6 +75,30 @@ function App() {
                             element={
                                 <RequireAdmin>
                                     <ManageAllOrders />
+                                </RequireAdmin>
+                            }
+                        />
+                        <Route
+                            path="pending-orders"
+                            element={
+                                <RequireAdmin>
+                                    <AllPendingShippedUnpaidOrders searchText="pending" />
+                                </RequireAdmin>
+                            }
+                        />
+                        <Route
+                            path="shipped-orders"
+                            element={
+                                <RequireAdmin>
+                                    <AllPendingShippedUnpaidOrders searchText="shipped" />
+                                </RequireAdmin>
+                            }
+                        />
+                        <Route
+                            path="unpaid-orders"
+                            element={
+                                <RequireAdmin>
+                                    <AllPendingShippedUnpaidOrders searchText="unpaid" />
                                 </RequireAdmin>
                             }
                         />

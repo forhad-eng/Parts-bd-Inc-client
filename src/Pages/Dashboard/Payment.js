@@ -1,14 +1,17 @@
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import axiosPrivate from '../../api/axiosPrivate'
+import { PartsIdContext } from '../../App'
 import CheckoutForm from '../Dashboard/CheckoutForm'
 import LoadingSpinner from '../Shared/LoadingSpinner'
 
 const Payment = () => {
     const { id } = useParams()
+    const { setPartsId } = useContext(PartsIdContext)
+    setPartsId(id)
 
     const getOrder = async ({ queryKey }) => {
         const { data } = await axiosPrivate.get(`https://young-brushlands-57803.herokuapp.com/order/${queryKey[1]}`)
