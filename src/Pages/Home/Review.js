@@ -17,7 +17,7 @@ const Review = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto lg:px-10 mt-4">
+        <div className="max-w-7xl mx-auto lg:mb-20 lg:px-10 mt-4">
             <h2 className="text-3xl text-center font-semibold">Customers Review</h2>
             <p className="text-center text-gray-400">What our customers say</p>
             <div className="grid grid-cols-3 gap-10 mt-6">

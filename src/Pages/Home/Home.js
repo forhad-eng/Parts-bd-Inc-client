@@ -7,7 +7,7 @@ import Offers from './Offers'
 
 const Home = () => {
     return (
-        <div>
+        <div className="mb-32">
             <Banner />
             <Info />
             <FeaturedParts />
