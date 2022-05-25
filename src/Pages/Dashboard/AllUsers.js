@@ -32,7 +32,9 @@ const AllUsers = () => {
     }
 
     return (
-        <div>
+        <div className="shadow rounded-xl">
+            <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">All Users</h2>
+            <hr className="mb-6" />
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>

@@ -24,7 +24,7 @@ const FeaturedParts = () => {
         <div className="max-w-7xl mx-auto lg:px-10 mt-14 mb-10">
             <div className="flex justify-between items-center border-b-2">
                 <h4 className="text-xl font-semibold">Featured Products</h4>
-                <div className="flex items-center">
+                <div id="featured" className="flex items-center">
                     <button onClick={() => setSize(10)} className="btn btn-secondary btn-xs">
                         All
                     </button>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer className={`bg-[#555555]`}>
+        <footer className={`mt-20 bg-[#333333]`}>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto lg:px-10 py-14 text-white">
                 <div>
                     <div>
@@ -43,20 +43,20 @@ const Footer = () => {
                     <hr className="mt-2 h-[2px] w-6 bg-[#ff0000] border-none" />
                     <ul className="text-sm list-disc ml-3">
                         <li>
-                            <Link to="/all-cars" className="flex items-center mt-3">
-                                <p className="text-[#c4c3c3]">All Parts</p>
+                            <Link to="/dashboard" className="flex items-center mt-3">
+                                <p className="text-[#c4c3c3]">Dashboard</p>
                             </Link>
                         </li>
 
                         <li>
-                            <Link to="/all-cars" className="flex mt-3">
-                                <p className="text-[#c4c3c3]">Brands</p>
+                            <Link to="/dashboard/my-orders" className="flex mt-3">
+                                <p className="text-[#c4c3c3]">My Orders</p>
                             </Link>
                         </li>
 
                         <li>
-                            <Link to="/all-cars" className="flex mt-3">
-                                <p className="text-[#c4c3c3]">Support</p>
+                            <Link to="/dashboard/add-review" className="flex mt-3">
+                                <p className="text-[#c4c3c3]">Add A Review</p>
                             </Link>
                         </li>
 

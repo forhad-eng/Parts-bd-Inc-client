@@ -1,12 +1,13 @@
 import { signOut } from 'firebase/auth'
 import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../Firebase/firebase.init'
 
 const Navbar = () => {
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
+    const { pathname } = useLocation()
 
     const signOutHandle = () => {
         signOut(auth)
@@ -76,6 +77,28 @@ const Navbar = () => {
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">{menuItems}</ul>
             </div>
+            {(pathname === '/dashboard' ||
+                pathname === '/dashboard/my-orders' ||
+                pathname === '/dashboard/add-review') && (
+                <div className="navbar-end flex lg:hidden">
+                    <label for="dashboard-drawer" tabIndex="1" className="btn btn-ghost lg:hidden">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M4 6h16M4 12h8m-8 6h16"
+                            />
+                        </svg>
+                    </label>
+                </div>
+            )}
         </div>
     )
 }

@@ -33,7 +33,9 @@ const ManageAllOrders = () => {
     }
 
     return (
-        <div>
+        <div className="shadow rounded-xl">
+            <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Manage All Orders</h2>
+            <hr className="mb-6" />
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>

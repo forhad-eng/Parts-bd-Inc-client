@@ -9,7 +9,7 @@ const ManageProducts = () => {
 
     const getUsers = async () => {
         const { data } = await axiosPrivate.get('http://localhost:5000/parts')
-        return data.data
+        return data
     }
     const { data, isLoading, refetch } = useQuery('all-parts', getUsers)
 
@@ -26,7 +26,9 @@ const ManageProducts = () => {
     }
 
     return (
-        <div>
+        <div className="shadow rounded-xl">
+            <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Manage Products</h2>
+            <hr className="mb-6" />
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
@@ -40,7 +42,7 @@ const ManageProducts = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data?.map((item, index) => (
+                        {data?.data?.map((item, index) => (
                             <tr>
                                 <th>{index + 1}</th>
                                 <td>
