@@ -1,4 +1,4 @@
-# [Live Site](https://parts-bd.web.app/)
+# [Parts-bd Inc](https://parts-bd.web.app/)
 
 # Project Features
 
@@ -22,10 +22,11 @@
 -   Product Management
 -   Add Product
 
-# Tools & Technology Used
+# Tools & Technology Used (Client)
 
 -   Firebase Auth
 -   Axios (+ interceptor)
+-   Stripe (Card Payment)
 -   React query
 -   React router dom
 -   React countdown
@@ -34,5 +35,11 @@
 -   DaisyUI
 -   Require Auth both Admin and User level
 -   Git Version Control + GitHub
--   Heroku (Server)
--   Firebase Hosting (Client)
+-   Firebase Hosting (Client Deploy)
+
+# Tools & Technology Used (Server)
+
+-   Express.js
+-   MongoDB
+-   JWT
+-   Heroku (Server Deploy)

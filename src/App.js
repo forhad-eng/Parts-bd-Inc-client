@@ -12,11 +12,11 @@ import MyOrders from './Pages/Dashboard/MyOrders'
 import MyProfile from './Pages/Dashboard/MyProfile'
 import Payment from './Pages/Dashboard/Payment'
 import UpdateProfile from './Pages/Dashboard/UpdateProfile'
+import AllReview from './Pages/Home/AllReview'
 import BestSeller from './Pages/Home/BestSeller'
 import Blogs from './Pages/Home/Blogs'
 import Home from './Pages/Home/Home'
 import MyPortfolio from './Pages/Home/MyPortfolio'
-import Review from './Pages/Home/Review'
 import TopRated from './Pages/Home/TopRated'
 import Login from './Pages/Login/Login'
 import RequireAdmin from './Pages/Login/RequireAdmin'
@@ -41,7 +41,7 @@ function App() {
                         <Route index element={<BestSeller />} />
                         <Route path="top-rated" element={<TopRated />} />
                     </Route>
-                    <Route path="/review" element={<Review />} />
+                    <Route path="/review" element={<AllReview/>} />
                     <Route path="/blogs" element={<Blogs />} />
                     <Route path="/my-portfolio" element={<MyPortfolio />} />
                     <Route

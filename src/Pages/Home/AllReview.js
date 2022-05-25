@@ -4,7 +4,7 @@ import ReactStars from 'react-rating-stars-component'
 import axiosPrivate from '../../api/axiosPrivate'
 import LoadingSpinner from '../Shared/LoadingSpinner'
 
-const Review = () => {
+const AllReview = () => {
     const getReviews = async () => {
         const { data } = await axiosPrivate.get('https://young-brushlands-57803.herokuapp.com/review')
         return data
@@ -17,12 +17,12 @@ const Review = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto lg:mb-20 lg:px-10 mt-4">
+        <div className="max-w-7xl mx-auto mb-20 px-6 lg:px-10 mt-6">
             <h2 className="text-3xl text-center font-semibold">Customers Review</h2>
             <p className="text-center text-gray-400">What our customers say</p>
-            <div className="grid grid-cols-3 gap-10 mt-6">
+            <div className="grid lg:grid-cols-3 gap-x-10 gap-y-5 mt-8">
                 {data.map(review => (
-                    <div className="shadow rounded-lg flex justify-evenly p-4">
+                    <div className="shadow rounded-lg flex items-center gap-5 p-5">
                         <div class="avatar">
                             <div class="w-14 rounded-full">
                                 <img src="https://api.lorem.space/image/face?hash=92310" alt="user" />
@@ -41,4 +41,4 @@ const Review = () => {
     )
 }
 
-export default Review
+export default AllReview
