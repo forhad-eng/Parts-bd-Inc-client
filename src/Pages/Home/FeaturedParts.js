@@ -23,7 +23,7 @@ const FeaturedParts = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto lg:px-10 mt-14 mb-10">
+        <div className="max-w-7xl mx-auto px-7 lg:px-10 mt-14 mb-10">
             <div className="flex justify-between items-center border-b-2">
                 <h4 className="text-xl font-semibold">Featured Products</h4>
                 <div id="featured" className="flex items-center">

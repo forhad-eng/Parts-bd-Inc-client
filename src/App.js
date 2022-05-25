@@ -33,8 +33,8 @@ function App() {
     const [partsId, setPartsId] = useState('')
 
     return (
-        <PartsIdContext.Provider value={{ partsId, setPartsId }}>
-            <div>
+        <div>
+            <PartsIdContext.Provider value={{ partsId, setPartsId }}>
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />}>
@@ -104,8 +104,8 @@ function App() {
                 </Routes>
                 <Footer />
                 <ToastContainer />
-            </div>
-        </PartsIdContext.Provider>
+            </PartsIdContext.Provider>
+        </div>
     )
 }
 

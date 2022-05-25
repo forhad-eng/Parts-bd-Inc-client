@@ -16,6 +16,7 @@ const Navbar = () => {
         p === '/' ||
         p === '/review' ||
         p === '/blogs' ||
+        p === '/top-rated' ||
         p === '/my-portfolio' ||
         p === '/dashboard' ||
         p === '/dashboard/my-orders' ||

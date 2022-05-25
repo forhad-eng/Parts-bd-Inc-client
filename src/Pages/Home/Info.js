@@ -14,12 +14,12 @@ const Info = () => {
 
     return (
         <div className="max-w-7xl mx-auto lg:px-10">
-            <div className="grid lg:grid-cols-4 gap-5 my-8">
+            <div className="grid lg:grid-cols-4 gap-7 lg:gap-5 my-8">
                 {items.map((item, index) => (
-                    <div key={index} className="flex justify-evenly items-center">
+                    <div key={index} className="flex flex-col lg:flex-row justify-evenly items-center">
                         <img className="w-12" src={item.image} alt="" />
                         <div>
-                            <h5 className="text-md font-semibold">{item.title}</h5>
+                            <h5 className="text-md font-semibold text-center lg:text-left">{item.title}</h5>
                             <p className="text-sm">{item.des}</p>
                         </div>
                     </div>

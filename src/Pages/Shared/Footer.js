@@ -11,6 +11,7 @@ const Footer = () => {
         p === '/' ||
         p === '/review' ||
         p === '/blogs' ||
+        p === '/top-rated' ||
         p === '/my-portfolio' ||
         p === '/dashboard' ||
         p === '/dashboard/my-orders' ||
@@ -22,7 +23,7 @@ const Footer = () => {
 
     return (
         <footer className={`bg-[#333333] ${path ? 'block' : 'hidden'}`}>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto lg:px-10 py-14 text-white">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto px-7 py-14 lg:px-10 text-white">
                 <div>
                     <div>
                         <p className="text-2xl font-semibold">

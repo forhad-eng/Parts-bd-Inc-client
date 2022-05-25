@@ -58,3 +58,44 @@
 .offers .offers-bg p {
     margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 380px) {
+    .banner {
+        background-position: 60%;
+        height: calc(100vh - 320px);
+    }
+
+    .banner .title {
+        font-size: 35px;
+    }
+
+    .banner .sub-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .offers {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 28px;
+    }
+}
+
+@media only screen and (min-width: 381px) and (max-width: 576px) {
+    .banner {
+        background-position: 60%;
+        height: calc(100vh - 360px);
+    }
+    .banner .title {
+        font-size: 35px;
+    }
+    .banner .sub-title {
+        font-size: 20px;
+        text-align: center;
+    }
+    .offers {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 28px;
+    }
+}
