@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import auth from '../../Firebase/firebase.init'
@@ -11,32 +12,29 @@ const MyProfile = () => {
     const [user] = useAuthState(auth)
     const [userDetails] = useUser(user)
     const { email, name, education, city, division, phone, linkedIn } = userDetails
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset
+    } = useForm()
+    const navigate = useNavigate()
 
-    const addFieldHandle = async e => {
-        e.preventDefault()
-        const education = e.target.education.value
-        const city = e.target.city.value
-        const division = e.target.city.value
-        const phone = e.target.phone.value
-        const linkedIn = e.target.linkedIn.value
-
+    const onSubmit = async formData => {
         const updatedField = {
             name,
             email,
-            education,
-            city,
-            division,
-            phone,
-            linkedIn
+            ...formData
         }
-        console.log(updatedField)
 
         const { data } = await axiosPrivate.put(
             `https://young-brushlands-57803.herokuapp.com/user/update/${email}`,
             updatedField
         )
         if (data.success) {
-            toast.success(data.message)
+            reset()
+            navigate('/dashboard')
+            toast.success(data.message, { toastId: 'profile-updated1' })
         }
     }
 
@@ -46,14 +44,14 @@ const MyProfile = () => {
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">My Profile</h2>
             <hr className="mb-6" />
             <div className="pl-4 pb-10 lg:pl-10">
-                <form onSubmit={e => addFieldHandle(e)}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-col lg:flex-row lg:gap-20 mb-2">
-                        <div>
-                            <label className="font-bold text-sm">Name</label>
+                        <div className="flex gap-x-2 items-center lg:flex-col lg:items-start">
+                            <label className="font-bold text-sm">Name:</label>
                             <p>{name}</p>
                         </div>
-                        <div>
-                            <label className="font-bold text-sm mb-2 lg:mb-0">Email</label>
+                        <div className="flex gap-x-2 items-center lg:flex-col lg:items-start">
+                            <label className="font-bold text-sm">Email:</label>
                             <p>{email}</p>
                         </div>
                     </div>
@@ -64,26 +62,34 @@ const MyProfile = () => {
                             <p>{education}</p>
                         ) : (
                             <input
+                                {...register('education', {
+                                    required: { value: true, message: 'Education is required' }
+                                })}
                                 name="education"
                                 type="text"
                                 placeholder="Your intuition"
                                 class="input input-bordered w-full max-w-xs block"
                             />
                         )}
+                        {errors?.education?.type === 'required' && (
+                            <p className="text-primary">{errors.education.message}</p>
+                        )}
                     </div>
-                    <div className="flex gap-9 mb-2">
+                    <div className="flex flex-col lg:flex-row gap-x-9 gap-y-2 mb-2">
                         <div>
                             <label className="font-bold text-sm">City</label>
                             {city ? (
                                 <p>{city}</p>
                             ) : (
                                 <input
+                                    {...register('city', { required: { value: true, message: 'City is required' } })}
                                     name="city"
                                     type="text"
                                     placeholder="city"
                                     class="input input-bordered w-full max-w-xs block"
                                 />
                             )}
+                            {errors?.city?.type === 'required' && <p className="text-primary">{errors.city.message}</p>}
                         </div>
                         <div>
                             <label className="font-bold text-sm">Division</label>
@@ -91,26 +97,36 @@ const MyProfile = () => {
                                 <p>{division}</p>
                             ) : (
                                 <input
+                                    {...register('division', {
+                                        required: { value: true, message: 'Division is required' }
+                                    })}
                                     name="division"
                                     type="text"
                                     placeholder="division"
                                     class="input input-bordered w-full max-w-xs block"
                                 />
                             )}
+                            {errors?.division?.type === 'required' && (
+                                <p className="text-primary">{errors.division.message}</p>
+                            )}
                         </div>
                     </div>
-                    <div className="flex gap-4 mb-2">
+                    <div className="flex flex-col lg:flex-row gap-x-9 gap-y-2 mb-2">
                         <div>
                             <label className="font-bold text-sm">Phone</label>
                             {phone ? (
                                 <p>{phone}</p>
                             ) : (
                                 <input
+                                    {...register('phone', { required: { value: true, message: 'Phone is required' } })}
                                     name="phone"
                                     type="text"
                                     placeholder="Phone"
                                     class="input input-bordered w-full max-w-xs block"
                                 />
+                            )}
+                            {errors?.phone?.type === 'required' && (
+                                <p className="text-primary">{errors.phone.message}</p>
                             )}
                         </div>
                         <div>
@@ -119,11 +135,17 @@ const MyProfile = () => {
                                 <p>{linkedIn}</p>
                             ) : (
                                 <input
+                                    {...register('linkedIn', {
+                                        required: { value: true, message: 'LinkedIn is required' }
+                                    })}
                                     name="linkedIn"
                                     type="text"
                                     placeholder="LinkedIn profile link"
                                     class="input input-bordered w-full max-w-xs block"
                                 />
+                            )}
+                            {errors?.linkedIn?.type === 'required' && (
+                                <p className="text-primary">{errors.linkedIn.message}</p>
                             )}
                         </div>
                     </div>

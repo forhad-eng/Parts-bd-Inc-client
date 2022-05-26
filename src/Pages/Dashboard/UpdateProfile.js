@@ -38,7 +38,7 @@ const UpdateProfile = () => {
         )
         if (data.success) {
             navigate('/dashboard')
-            toast.success(data.message)
+            toast.success(data.message, { toastId: 'profile-updated2' })
         }
     }
 

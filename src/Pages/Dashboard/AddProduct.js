@@ -41,11 +41,11 @@ const AddProduct = () => {
         // reset()
     }
     return (
-        <div className="card card-body w-full lg:max-w-xl mx-auto shadow-2xl bg-base-10 mt-8 mb-6">
+        <div className="w-full lg:max-w-xl shadow rounded-xl mb-6 lg:mb-0">
+            <h3 className="text-2xl font-bold pt-4 pl-10 mb-2">Add Product</h3>
+            <hr />
             <SetTitle title={'Add Product'} />
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <h3 className="text-2xl font-semibold mb-1">Add Product</h3>
-                <hr />
+            <form onSubmit={handleSubmit(onSubmit)} className="card card-body">
                 <div className="grid lg:grid-cols-2 gap-x-10">
                     <div className="form-control">
                         <label className="label">

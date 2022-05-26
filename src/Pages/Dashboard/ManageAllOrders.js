@@ -35,7 +35,7 @@ const ManageAllOrders = () => {
     }
 
     return (
-        <div className="shadow rounded-xl">
+        <div className="shadow rounded-xl mb-6 lg:mb-0">
             <SetTitle title="Manage Orders" />
             <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Manage All Orders</h2>

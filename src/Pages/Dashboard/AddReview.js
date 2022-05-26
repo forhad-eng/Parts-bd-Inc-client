@@ -27,7 +27,7 @@ const AddReview = () => {
     }
 
     return (
-        <form onSubmit={e => reviewHandle(e)} className="card w-96 bg-base-100 shadow-lg">
+        <form onSubmit={e => reviewHandle(e)} className="card max-w-sm lg:max-w-sm shadow">
             <SetTitle title={'Add Review'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Add Review</h2>
             <hr className="mb-6" />
