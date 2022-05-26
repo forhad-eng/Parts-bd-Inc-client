@@ -7,19 +7,25 @@ const Footer = () => {
     const { pathname: p } = useLocation()
     let path = false
 
-    if (
-        p === '/' ||
-        p === '/review' ||
-        p === '/blogs' ||
-        p === '/top-rated' ||
-        p === '/my-portfolio' ||
-        p === '/login' ||
-        p === '/signup' ||
-        p === '/dashboard' ||
-        p === '/dashboard/my-orders' ||
-        p === '/dashboard/add-review' ||
-        p === `/purchase/${partsId}`
-    ) {
+    const dashboardPaths = [
+        '/dashboard',
+        '/dashboard/user/update-profile',
+        '/dashboard/my-orders',
+        '/dashboard/add-review',
+        '/dashboard/all-users',
+        '/dashboard/manage-orders',
+        '/dashboard/manage-products',
+        '/dashboard/add-product',
+        '/dashboard/pending-orders',
+        '/dashboard/shipped-orders',
+        '/dashboard/unpaid-orders',
+        `/purchase/${partsId}`,
+        `/dashboard/payment/${partsId}`
+    ]
+
+    const allPaths = ['/', '/top-rated', '/review', '/blogs', '/my-portfolio', '/login', '/signup', ...dashboardPaths]
+
+    if (allPaths.includes(p)) {
         path = true
     }
 

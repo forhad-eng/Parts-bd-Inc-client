@@ -30,7 +30,7 @@ const Navbar = () => {
         `/dashboard/payment/${partsId}`
     ]
 
-    const allPaths = ['/', '/review', '/blogs', '/my-portfolio', '/login', '/signup', ...dashboardPaths]
+    const allPaths = ['/', '/top-rated', '/review', '/blogs', '/my-portfolio', '/login', '/signup', ...dashboardPaths]
 
     if (allPaths.includes(p)) {
         path = true
@@ -100,14 +100,14 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl">
+                <Link to="/" className="btn btn-ghost normal-case text-xl ml-10 lg:ml-0">
                     PARTS<span className="text-primary">BD</span>&nbsp;INC
                 </Link>
             </div>
-            <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal p-0 mr-2">{menuItems}</ul>
+            <div className="navbar-end">
+                <ul className="menu menu-horizontal p-0 mr-2 hidden lg:flex">{menuItems}</ul>
                 {user && (
-                    <div class="avatar placeholder">
+                    <div class="avatar placeholder mr-2 lg:mr-0">
                         <div class="bg-neutral-focus text-neutral-content rounded-full w-10">
                             <span className="uppercase flex items-center">
                                 {user?.displayName.split(' ')[0].slice(0, 1)}

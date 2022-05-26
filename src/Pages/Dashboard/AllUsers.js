@@ -67,12 +67,14 @@ const AllUsers = () => {
                                     )}
                                 </td>
                                 <td>
-                                    <button
-                                        onClick={() => removeUserHandle(user.email)}
-                                        className="btn btn-error btn-xs"
-                                    >
-                                        Remove User
-                                    </button>
+                                    {user.role !== 'admin' && (
+                                        <button
+                                            onClick={() => removeUserHandle(user.email)}
+                                            className="btn btn-error btn-xs"
+                                        >
+                                            Remove User
+                                        </button>
+                                    )}
                                 </td>
                             </tr>
                         ))}
