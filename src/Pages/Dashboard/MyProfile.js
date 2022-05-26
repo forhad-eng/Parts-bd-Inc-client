@@ -29,6 +29,7 @@ const MyProfile = () => {
             phone,
             linkedIn
         }
+        console.log(updatedField)
 
         const { data } = await axiosPrivate.put(
             `https://young-brushlands-57803.herokuapp.com/user/update/${email}`,
@@ -44,15 +45,15 @@ const MyProfile = () => {
             <SetTitle title={'My Profile'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">My Profile</h2>
             <hr className="mb-6" />
-            <div className="pl-10 pb-10">
+            <div className="pl-4 pb-10 lg:pl-10">
                 <form onSubmit={e => addFieldHandle(e)}>
-                    <div className="flex gap-20 mb-2">
+                    <div className="flex flex-col lg:flex-row lg:gap-20 mb-2">
                         <div>
                             <label className="font-bold text-sm">Name</label>
                             <p>{name}</p>
                         </div>
                         <div>
-                            <label className="font-bold text-sm">Email</label>
+                            <label className="font-bold text-sm mb-2 lg:mb-0">Email</label>
                             <p>{email}</p>
                         </div>
                     </div>
@@ -70,7 +71,7 @@ const MyProfile = () => {
                             />
                         )}
                     </div>
-                    <div className="flex gap-4 mb-2">
+                    <div className="flex gap-9 mb-2">
                         <div>
                             <label className="font-bold text-sm">City</label>
                             {city ? (
@@ -126,7 +127,7 @@ const MyProfile = () => {
                             )}
                         </div>
                     </div>
-                    {(!education || !city || !division || !phone || !linkedIn) && (
+                    {!education && !city && !division && !phone && !linkedIn && (
                         <button className="btn btn-primary btn-sm mt-6">Add Fields</button>
                     )}
                 </form>

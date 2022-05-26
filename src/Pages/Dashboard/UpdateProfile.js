@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import auth from '../../Firebase/firebase.init'
@@ -12,30 +13,50 @@ const UpdateProfile = () => {
     const [userDetails, setUserDetails] = useUser(user)
     const { email, name, education, city, division, phone, linkedIn } = userDetails
     const { register, handleSubmit } = useForm()
+    const navigate = useNavigate()
 
     const onSubmit = async formData => {
-        const updatedUser = {
-            ...formData,
-            email
+        const updatedEducation = formData.name ? formData.name : education
+        const updatedCity = formData.city ? formData.city : city
+        const updatedDivision = formData.division ? formData.division : division
+        const updatedPhone = formData.phone ? formData.phone : phone
+        const updatedLinkedIn = formData.linkedIn ? formData.linkedIn : linkedIn
+
+        const updatedData = {
+            name,
+            email,
+            education: updatedEducation,
+            city: updatedCity,
+            division: updatedDivision,
+            phone: updatedPhone,
+            linkedIn: updatedLinkedIn
         }
+
         const { data } = await axiosPrivate.put(
             `https://young-brushlands-57803.herokuapp.com/user/update/${email}`,
-            updatedUser
+            updatedData
         )
         if (data.success) {
+            navigate('/dashboard')
             toast.success(data.message)
         }
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="shadow rounded-xl px-20 pb-10">
+        <form onSubmit={handleSubmit(onSubmit)} className="shadow rounded-xl px-6 pb-10 lg:p-0 lg:px-20 lg:pb-10">
             <SetTitle title={'Update Profile'} />
-            <div className="grid grid-cols-2 gap-x-10">
+            <div className="grid lg:grid-cols-2 gap-x-10">
                 <div className="form-control mt-2">
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input {...register('name')} type="text" className="input input-bordered" />
+                    <input
+                        {...register('name')}
+                        value={name}
+                        type="text"
+                        placeholder="Name"
+                        className="input input-bordered bg-base-200"
+                    />
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
@@ -46,8 +67,7 @@ const UpdateProfile = () => {
                         value={email}
                         readOnly
                         type="text"
-                        placeholder="Email"
-                        className="input input-bordered"
+                        className="input input-bordered bg-base-200"
                     />
                 </div>
                 <div className="form-control mt-2">
@@ -56,8 +76,10 @@ const UpdateProfile = () => {
                     </label>
                     <input
                         {...register('education')}
+                        value={education}
+                        onChange={e => setUserDetails({ ...userDetails, education: e.target.value })}
                         type="text"
-                        placeholder="Email"
+                        placeholder="Education"
                         className="input input-bordered"
                     />
                 </div>
@@ -65,25 +87,53 @@ const UpdateProfile = () => {
                     <label className="label">
                         <span className="label-text">City</span>
                     </label>
-                    <input {...register('city')} type="text" placeholder="Email" className="input input-bordered" />
+                    <input
+                        {...register('city')}
+                        value={city}
+                        onChange={e => setUserDetails({ ...userDetails, city: e.target.value })}
+                        type="text"
+                        placeholder="City"
+                        className="input input-bordered"
+                    />
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
                         <span className="label-text">Division</span>
                     </label>
-                    <input {...register('division')} type="text" placeholder="Email" className="input input-bordered" />
+                    <input
+                        {...register('division')}
+                        value={division}
+                        onChange={e => setUserDetails({ ...userDetails, division: e.target.value })}
+                        type="text"
+                        placeholder="Division"
+                        className="input input-bordered"
+                    />
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
                         <span className="label-text">Phone</span>
                     </label>
-                    <input {...register('phone')} type="text" placeholder="Email" className="input input-bordered" />
+                    <input
+                        {...register('phone')}
+                        value={phone}
+                        onChange={e => setUserDetails({ ...userDetails, phone: e.target.value })}
+                        type="text"
+                        placeholder="Phone"
+                        className="input input-bordered"
+                    />
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
                         <span className="label-text">LinkedIn</span>
                     </label>
-                    <input {...register('linkedIn')} type="text" placeholder="Email" className="input input-bordered" />
+                    <input
+                        {...register('linkedIn')}
+                        value={linkedIn}
+                        onChange={e => setUserDetails({ ...userDetails, linkedIn: e.target.value })}
+                        type="text"
+                        placeholder="LinkedIn"
+                        className="input input-bordered"
+                    />
                 </div>
             </div>
             <button className="btn btn-primary btn-sm mt-4">Update</button>

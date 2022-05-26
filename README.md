@@ -30,6 +30,7 @@
 -   React query
 -   React router dom
 -   React countdown
+-   React Helmet
 -   React rating star
 -   TailwindCSS
 -   DaisyUI
