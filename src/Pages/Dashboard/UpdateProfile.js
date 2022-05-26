@@ -53,6 +53,7 @@ const UpdateProfile = () => {
                     <input
                         {...register('name')}
                         value={name}
+                        readOnly
                         type="text"
                         placeholder="Name"
                         className="input input-bordered bg-base-200"
@@ -67,6 +68,7 @@ const UpdateProfile = () => {
                         value={email}
                         readOnly
                         type="text"
+                        placeholder="Email"
                         className="input input-bordered bg-base-200"
                     />
                 </div>

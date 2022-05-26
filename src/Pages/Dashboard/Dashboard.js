@@ -17,7 +17,7 @@ const Dashboard = () => {
     return (
         <div class="drawer drawer-mobile max-w-7xl mx-auto lg:mb-20 lg:px-10 p-4">
             <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content px-2 py-1">
+            <div class="drawer-content px-2 lg:px-4 py-1">
                 <Outlet />
             </div>
             <div class="drawer-side shadow rounded-lg">

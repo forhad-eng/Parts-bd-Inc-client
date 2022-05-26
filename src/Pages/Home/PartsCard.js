@@ -8,7 +8,7 @@ const PartsCard = ({ parts }) => {
     return (
         <div class="card bg-base-100 shadow-lg">
             <figure>
-                <img src={image} alt="Shoes" />
+                <img src={image} alt="Shoes" className="hover:scale-95 transition-all" />
             </figure>
             <div class="card-body pt-0">
                 <h2 class="card-title">{name}</h2>

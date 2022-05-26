@@ -13,6 +13,8 @@ const Footer = () => {
         p === '/blogs' ||
         p === '/top-rated' ||
         p === '/my-portfolio' ||
+        p === '/login' ||
+        p === '/signup' ||
         p === '/dashboard' ||
         p === '/dashboard/my-orders' ||
         p === '/dashboard/add-review' ||

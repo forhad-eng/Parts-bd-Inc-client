@@ -43,7 +43,7 @@ const SignUp = () => {
     }
 
     return (
-        <div className="card card-body w-full lg:max-w-md mx-auto shadow-2xl bg-base-10 mt-14 mb-6">
+        <div className="card card-body w-full lg:max-w-md mx-auto shadow-2xl bg-base-10 mt-14 mb-20">
             <SetTitle title={'Sign Up'} />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h3 className="text-2xl font-semibold mb-1">Sign Up</h3>

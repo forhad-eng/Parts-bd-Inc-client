@@ -6,10 +6,11 @@ import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import auth from '../../Firebase/firebase.init'
 import useUser from '../../hooks/useUser'
+import LoadingSpinner from '../Shared/LoadingSpinner'
 import SetTitle from '../Shared/SetTitle'
 
 const MyProfile = () => {
-    const [user] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth)
     const [userDetails] = useUser(user)
     const { email, name, education, city, division, phone, linkedIn } = userDetails
     const {
@@ -38,6 +39,10 @@ const MyProfile = () => {
         }
     }
 
+    if (loading) {
+        return <LoadingSpinner />
+    }
+
     return (
         <div className="shadow rounded-xl">
             <SetTitle title={'My Profile'} />
@@ -48,7 +53,7 @@ const MyProfile = () => {
                     <div className="flex flex-col lg:flex-row lg:gap-20 mb-2">
                         <div className="flex gap-x-2 items-center lg:flex-col lg:items-start">
                             <label className="font-bold text-sm">Name:</label>
-                            <p>{name}</p>
+                            <p>{user?.displayName}</p>
                         </div>
                         <div className="flex gap-x-2 items-center lg:flex-col lg:items-start">
                             <label className="font-bold text-sm">Email:</label>

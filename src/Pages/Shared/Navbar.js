@@ -1,3 +1,5 @@
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { signOut } from 'firebase/auth'
 import React, { useContext } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -28,7 +30,7 @@ const Navbar = () => {
         `/dashboard/payment/${partsId}`
     ]
 
-    const allPaths = ['/', '/review', '/blogs', '/my-portfolio', ...dashboardPaths]
+    const allPaths = ['/', '/review', '/blogs', '/my-portfolio', '/login', '/signup', ...dashboardPaths]
 
     if (allPaths.includes(p)) {
         path = true
@@ -43,9 +45,6 @@ const Navbar = () => {
     const menuItems = (
         <>
             <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
                 <Link to="/review">Reviews</Link>
             </li>
             <li>
@@ -59,14 +58,17 @@ const Navbar = () => {
                     <li>
                         <Link to="/dashboard">Dashboard</Link>
                     </li>
-                    <li>
-                        <button onClick={signOutHandle}>Sign Out</button>
-                    </li>
+
+                    <span className="flex items-center ">
+                        <button className="btn btn-primary btn-sm text-white font-normal" onClick={signOutHandle}>
+                            Sign Out <FontAwesomeIcon className="ml-2" icon={faRightFromBracket} />
+                        </button>
+                    </span>
                 </>
             ) : (
-                <li>
-                    <Link to="/login">Login</Link>
-                </li>
+                <Link to="/login" className="flex items-center">
+                    <button className="btn btn-primary btn-sm text-white font-normal">Login</button>
+                </Link>
             )}
         </>
     )
@@ -103,7 +105,17 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">{menuItems}</ul>
+                <ul className="menu menu-horizontal p-0 mr-2">{menuItems}</ul>
+                {user && (
+                    <div class="avatar placeholder">
+                        <div class="bg-neutral-focus text-neutral-content rounded-full w-10">
+                            <span className="uppercase flex items-center">
+                                {user?.displayName.split(' ')[0].slice(0, 1)}
+                                {user?.displayName.split(' ')[1]?.slice(0, 1)}
+                            </span>
+                        </div>
+                    </div>
+                )}
             </div>
             {dashboardPaths.includes(p) && (
                 <div className="navbar-end flex lg:hidden">

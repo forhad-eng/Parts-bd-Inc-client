@@ -17,7 +17,7 @@ const LastSixReview = () => {
     }
 
     const lastSixData = []
-    data.map(item => lastSixData.unshift(item))
+    data?.map(item => lastSixData.unshift(item))
 
     return (
         <div>
