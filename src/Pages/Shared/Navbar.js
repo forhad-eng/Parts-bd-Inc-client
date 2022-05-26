@@ -12,26 +12,25 @@ const Navbar = () => {
     const { pathname: p } = useLocation()
     let path = false
 
-    if (
-        p === '/' ||
-        p === '/review' ||
-        p === '/blogs' ||
-        p === '/top-rated' ||
-        p === '/my-portfolio' ||
-        p === '/dashboard' ||
-        p === '/dashboard/user/update-profile' ||
-        p === '/dashboard/my-orders' ||
-        p === '/dashboard/add-review' ||
-        p === '/dashboard/all-users' ||
-        p === '/dashboard/manage-orders' ||
-        p === '/dashboard/manage-products' ||
-        p === '/dashboard/add-product' ||
-        p === '/dashboard/pending-orders' ||
-        p === '/dashboard/shipped-orders' ||
-        p === '/dashboard/unpaid-orders' ||
-        p === `/purchase/${partsId}` ||
-        p === `/dashboard/payment/${partsId}`
-    ) {
+    const dashboardPaths = [
+        '/dashboard',
+        '/dashboard/user/update-profile',
+        '/dashboard/my-orders',
+        '/dashboard/add-review',
+        '/dashboard/all-users',
+        '/dashboard/manage-orders',
+        '/dashboard/manage-products',
+        '/dashboard/add-product',
+        '/dashboard/pending-orders',
+        '/dashboard/shipped-orders',
+        '/dashboard/unpaid-orders',
+        `/purchase/${partsId}`,
+        `/dashboard/payment/${partsId}`
+    ]
+
+    const allPaths = ['/', '/review', '/blogs', '/my-portfolio', ...dashboardPaths]
+
+    if (allPaths.includes(p)) {
         path = true
     }
 
@@ -106,7 +105,7 @@ const Navbar = () => {
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">{menuItems}</ul>
             </div>
-            {(p === '/dashboard' || p === '/dashboard/my-orders' || p === '/dashboard/add-review') && (
+            {dashboardPaths.includes(p) && (
                 <div className="navbar-end flex lg:hidden">
                     <label for="dashboard-drawer" tabIndex="1" className="btn btn-ghost lg:hidden">
                         <svg

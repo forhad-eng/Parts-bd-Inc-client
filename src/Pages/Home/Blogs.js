@@ -3,10 +3,12 @@ import code from '../../assets/code.png'
 import inheritancePic from '../../assets/inheritance.png'
 import reactPic from '../../assets/react.png'
 import unitTesting from '../../assets/unit-testing.png'
+import SetTitle from '../Shared/SetTitle'
 
 const Blogs = () => {
     return (
         <section className="blog py-10 px-4 md:px-8 lg:px-14 lg:pb-14 bg-[#e5e5e5]">
+            <SetTitle title={'Blogs'} />
             <div className="max-w-7xl mx-auto">
                 <p className="text-2xl md:text-3xl text-center mb-5">𝒲𝑒𝓁𝒸𝑜𝓂𝑒 𝒯𝑜 𝐵𝓁𝑜𝑔𝓈</p>
                 <div className="lg:w-9/12 mx-auto p-4 bg-white rounded">

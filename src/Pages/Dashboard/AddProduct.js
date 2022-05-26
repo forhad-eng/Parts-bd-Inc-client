@@ -3,6 +3,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
+import SetTitle from '../Shared/SetTitle'
 
 const AddProduct = () => {
     const {
@@ -41,6 +42,7 @@ const AddProduct = () => {
     }
     return (
         <div className="card card-body w-full lg:max-w-xl mx-auto shadow-2xl bg-base-10 mt-8 mb-6">
+            <SetTitle title={'Add Product'} />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h3 className="text-2xl font-semibold mb-1">Add Product</h3>
                 <hr />

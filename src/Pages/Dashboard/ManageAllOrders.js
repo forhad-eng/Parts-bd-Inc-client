@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import LoadingSpinner from '../Shared/LoadingSpinner'
+import SetTitle from '../Shared/SetTitle'
 
 const ManageAllOrders = () => {
     const [order, setOrder] = useState(null)
@@ -35,6 +36,7 @@ const ManageAllOrders = () => {
 
     return (
         <div className="shadow rounded-xl">
+            <SetTitle title="Manage Orders" />
             <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Manage All Orders</h2>
                 <div className="flex gap-3">

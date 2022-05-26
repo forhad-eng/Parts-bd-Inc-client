@@ -4,6 +4,7 @@ import { useQuery } from 'react-query'
 import axiosPrivate from '../../api/axiosPrivate'
 import auth from '../../Firebase/firebase.init'
 import LoadingSpinner from '../Shared/LoadingSpinner'
+import SetTitle from '../Shared/SetTitle'
 import CancelModal from './CancelModal'
 import MyOrderRow from './MyOrderRow'
 
@@ -28,6 +29,7 @@ const MyOrders = () => {
 
     return (
         <div class="overflow-x-auto shadow rounded-xl pb-6">
+            <SetTitle title={'My Orders'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">My Orders</h2>
             <hr className="mb-6" />
             {data.length ? (

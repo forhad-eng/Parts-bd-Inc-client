@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import developer from '../../assets/developer.png'
 import '../../Styles/About.css'
+import SetTitle from '../Shared/SetTitle'
 
 const MyPortfolio = () => {
     return (
         <div className="about-me grid md:grid-cols-2 md:gap-10 px-4 md:px-14 lg:px-20">
+            <SetTitle title={'My Portfolio'} />
             <div className="mx-auto mb-80 md:mb-0 md:mt-24 order-2 md:order-1">
                 <h2 className="text-4xl font-[600]">Hello, It's me Forhad Uddin</h2>
                 <p>

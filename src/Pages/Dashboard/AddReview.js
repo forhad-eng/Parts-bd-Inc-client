@@ -4,6 +4,7 @@ import ReactStars from 'react-rating-stars-component'
 import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import auth from '../../Firebase/firebase.init'
+import SetTitle from '../Shared/SetTitle'
 
 const AddReview = () => {
     const [user] = useAuthState(auth)
@@ -27,6 +28,7 @@ const AddReview = () => {
 
     return (
         <form onSubmit={e => reviewHandle(e)} className="card w-96 bg-base-100 shadow-lg">
+            <SetTitle title={'Add Review'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Add Review</h2>
             <hr className="mb-6" />
             <div className="mb-4 pl-10">

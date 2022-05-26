@@ -6,6 +6,7 @@ import googleLogo from '../../assets/icons/google.png'
 import auth from '../../Firebase/firebase.init'
 import useToken from '../../hooks/useToken'
 import LoadingSpinner from '../Shared/LoadingSpinner'
+import SetTitle from '../Shared/SetTitle'
 
 const SignUp = () => {
     const [createUserWithEmailAndPassword, eUser, eLoading, eErr] = useCreateUserWithEmailAndPassword(auth, {
@@ -43,6 +44,7 @@ const SignUp = () => {
 
     return (
         <div className="card card-body w-full lg:max-w-md mx-auto shadow-2xl bg-base-10 mt-14 mb-6">
+            <SetTitle title={'Sign Up'} />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h3 className="text-2xl font-semibold mb-1">Sign Up</h3>
                 <hr />

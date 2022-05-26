@@ -3,6 +3,7 @@ import { useQuery } from 'react-query'
 import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import LoadingSpinner from '../Shared/LoadingSpinner'
+import SetTitle from '../Shared/SetTitle'
 
 const AllUsers = () => {
     const getUsers = async () => {
@@ -33,6 +34,7 @@ const AllUsers = () => {
 
     return (
         <div className="shadow rounded-xl">
+            <SetTitle title={'All Users'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">All Users</h2>
             <hr className="mb-6" />
             <div class="overflow-x-auto">

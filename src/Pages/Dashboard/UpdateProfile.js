@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import auth from '../../Firebase/firebase.init'
 import useUser from '../../hooks/useUser'
+import SetTitle from '../Shared/SetTitle'
 
 const UpdateProfile = () => {
     const [user] = useAuthState(auth)
@@ -28,6 +29,7 @@ const UpdateProfile = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="shadow rounded-xl px-20 pb-10">
+            <SetTitle title={'Update Profile'} />
             <div className="grid grid-cols-2 gap-x-10">
                 <div className="form-control mt-2">
                     <label className="label">

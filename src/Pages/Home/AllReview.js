@@ -3,6 +3,7 @@ import { useQuery } from 'react-query'
 import ReactStars from 'react-rating-stars-component'
 import axiosPrivate from '../../api/axiosPrivate'
 import LoadingSpinner from '../Shared/LoadingSpinner'
+import SetTitle from '../Shared/SetTitle'
 
 const AllReview = () => {
     const getReviews = async () => {
@@ -18,6 +19,7 @@ const AllReview = () => {
 
     return (
         <div className="max-w-7xl mx-auto mb-20 px-6 lg:px-10 mt-6">
+            <SetTitle title={'Reviews'} />
             <h2 className="text-3xl text-center font-semibold">Customers Review</h2>
             <p className="text-center text-gray-400">What our customers say</p>
             <div className="grid lg:grid-cols-3 gap-x-10 gap-y-5 mt-8">

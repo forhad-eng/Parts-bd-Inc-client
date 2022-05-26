@@ -7,6 +7,7 @@ import axiosPrivate from '../../api/axiosPrivate'
 import { PartsIdContext } from '../../App'
 import CheckoutForm from '../Dashboard/CheckoutForm'
 import LoadingSpinner from '../Shared/LoadingSpinner'
+import SetTitle from '../Shared/SetTitle'
 
 const Payment = () => {
     const { id } = useParams()
@@ -30,6 +31,7 @@ const Payment = () => {
 
     return (
         <div>
+            <SetTitle title={'Payment'} />
             <div class="card w-96 bg-base-100 shadow-lg">
                 <div class="card-body pt-4">
                     <h2 class="card-title text-success">Hello, {name}</h2>

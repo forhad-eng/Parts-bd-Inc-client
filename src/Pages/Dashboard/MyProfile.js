@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import auth from '../../Firebase/firebase.init'
 import useUser from '../../hooks/useUser'
+import SetTitle from '../Shared/SetTitle'
 
 const MyProfile = () => {
     const [user] = useAuthState(auth)
@@ -40,6 +41,7 @@ const MyProfile = () => {
 
     return (
         <div className="shadow rounded-xl">
+            <SetTitle title={'My Profile'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">My Profile</h2>
             <hr className="mb-6" />
             <div className="pl-10 pb-10">

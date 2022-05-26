@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import { PartsIdContext } from '../../App'
 import auth from '../../Firebase/firebase.init'
+import SetTitle from '../Shared/SetTitle'
 
 const Purchase = () => {
     const [user] = useAuthState(auth)
@@ -66,6 +67,7 @@ const Purchase = () => {
 
     return (
         <div className="min-h-screen bg-base-200 pb-20 lg:pb-0">
+            <SetTitle title={'Purchase'} />
             <h2 className="text-3xl font-semibold text-center pt-8 md:pt-8 md:pb-10">Your selected item!</h2>
             <div class="flex flex-col md:flex-row justify-center items-center gap-10 px-6">
                 <div class="card w-full max-w-sm lg:max-w-sm bg-base-100 shadow-lg mt-8 md:mt-0">
