@@ -43,84 +43,88 @@ const SignUp = () => {
     }
 
     return (
-        <div className="card card-body w-full lg:max-w-md mx-auto shadow-2xl bg-base-10 mt-14 mb-20">
-            <SetTitle title={'Sign Up'} />
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <h3 className="text-2xl font-semibold mb-1">Sign Up</h3>
-                <hr />
+        <div className="px-5">
+            <div className="card card-body max-w-sm lg:max-w-md mx-auto shadow mt-14 mb-20">
+                <SetTitle title={'Sign Up'} />
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <h3 className="text-2xl font-semibold mb-1">Sign Up</h3>
+                    <hr />
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">
+                                Name<span className="text-red"> *</span>
+                            </span>
+                        </label>
+                        <input
+                            {...register('name', {
+                                required: { value: true, message: 'Name is required' }
+                            })}
+                            type="text"
+                            placeholder="Your name"
+                            className="input input-bordered"
+                        />
+                        {errors?.name?.type === 'required' && <p className="text-primary">{errors.name.message}</p>}
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">
+                                Email<span className="text-red"> *</span>
+                            </span>
+                        </label>
+                        <input
+                            {...register('email', {
+                                required: { value: true, message: 'Email is required' },
+                                pattern: { value: /\S+@\S+\.\S+/, message: 'Invalid email!' }
+                            })}
+                            type="text"
+                            placeholder="Email"
+                            className="input input-bordered"
+                        />
+                        {errors?.email?.type === 'required' && <p className="text-primary">{errors.email.message}</p>}
+                        {errors?.email?.type === 'pattern' && <p className="text-primary">{errors.email.message}</p>}
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">
+                                Password<span className="text-red"> *</span>
+                            </span>
+                        </label>
+                        <input
+                            {...register('password', {
+                                required: { value: true, message: 'Password is required' },
+                                minLength: { value: 6, message: 'Password must be minimum 6 character length' }
+                            })}
+                            type="text"
+                            placeholder="Password"
+                            className="input input-bordered"
+                        />
+                        {errors?.password?.type === 'required' && (
+                            <p className="text-primary">{errors.password.message}</p>
+                        )}
+                        {errors?.password?.type === 'minLength' && (
+                            <p className="text-primary">{errors.password.message}</p>
+                        )}
+                    </div>
+                    {errorMessage}
+                    <div className="form-control mt-4">
+                        <button className="btn btn-primary text-white uppercase">Sign Up</button>
+                    </div>
+                    <button className="label-text-alt text-left">
+                        Already have an account?
+                        <Link to="/login" className="hover:underline">
+                            <span className="ml-1 text-accent">Login</span>
+                        </Link>
+                    </button>
+                </form>
+                <div class="divider">OR</div>
                 <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">
-                            Name<span className="text-red"> *</span>
-                        </span>
-                    </label>
-                    <input
-                        {...register('name', {
-                            required: { value: true, message: 'Name is required' }
-                        })}
-                        type="text"
-                        placeholder="Your name"
-                        className="input input-bordered"
-                    />
-                    {errors?.name?.type === 'required' && <p className="text-primary">{errors.name.message}</p>}
+                    <button
+                        onClick={() => signInWithGoogle()}
+                        className="btn btn-ghost btn-outline btn-info justify-evenly"
+                    >
+                        <img className="h-8" src={googleLogo} alt="Google Sign in" /> Continue with Google
+                    </button>
                 </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">
-                            Email<span className="text-red"> *</span>
-                        </span>
-                    </label>
-                    <input
-                        {...register('email', {
-                            required: { value: true, message: 'Email is required' },
-                            pattern: { value: /\S+@\S+\.\S+/, message: 'Invalid email!' }
-                        })}
-                        type="text"
-                        placeholder="Email"
-                        className="input input-bordered"
-                    />
-                    {errors?.email?.type === 'required' && <p className="text-primary">{errors.email.message}</p>}
-                    {errors?.email?.type === 'pattern' && <p className="text-primary">{errors.email.message}</p>}
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">
-                            Password<span className="text-red"> *</span>
-                        </span>
-                    </label>
-                    <input
-                        {...register('password', {
-                            required: { value: true, message: 'Password is required' },
-                            minLength: { value: 6, message: 'Password must be minimum 6 character length' }
-                        })}
-                        type="text"
-                        placeholder="Password"
-                        className="input input-bordered"
-                    />
-                    {errors?.password?.type === 'required' && <p className="text-primary">{errors.password.message}</p>}
-                    {errors?.password?.type === 'minLength' && (
-                        <p className="text-primary">{errors.password.message}</p>
-                    )}
-                </div>
-                {errorMessage}
-                <div className="form-control mt-4">
-                    <button className="btn btn-primary text-white uppercase">Sign Up</button>
-                </div>
-                <button className="label-text-alt text-left">
-                    Already have an account?
-                    <Link to="/login" className="hover:underline">
-                        <span className="ml-1 text-accent">Login</span>
-                    </Link>
-                </button>
-            </form>
-            <div class="divider">OR</div>
-            <div className="form-control">
-                <button
-                    onClick={() => signInWithGoogle()}
-                    className="btn btn-ghost btn-outline btn-info justify-evenly"
-                >
-                    <img className="h-8" src={googleLogo} alt="Google Sign in" /> Continue with Google
-                </button>
             </div>
         </div>
     )

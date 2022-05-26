@@ -37,15 +37,13 @@ const AddProduct = () => {
                 toast.success(updatedData.message, { toastId: 'product-add-success' })
             }
         }
-
-        // reset()
     }
     return (
         <div className="w-full lg:max-w-xl shadow rounded-xl mb-6 lg:mb-0">
             <h3 className="text-2xl font-bold pt-4 pl-10 mb-2">Add Product</h3>
             <hr />
             <SetTitle title={'Add Product'} />
-            <form onSubmit={handleSubmit(onSubmit)} className="card card-body">
+            <form onSubmit={handleSubmit(onSubmit)} className="px-4 pb-10">
                 <div className="grid lg:grid-cols-2 gap-x-10">
                     <div className="form-control">
                         <label className="label">
