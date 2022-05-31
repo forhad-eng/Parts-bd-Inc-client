@@ -9,7 +9,7 @@ import SetTitle from '../Shared/SetTitle'
 const ManageAllOrders = () => {
     const [order, setOrder] = useState(null)
     const getOrders = async () => {
-        const { data } = await axiosPrivate.get('https://young-brushlands-57803.herokuapp.com/order')
+        const { data } = await axiosPrivate.get('https://secure-fjord-36331.herokuapp.com/order')
         return data
     }
     const { data, isLoading, refetch } = useQuery('all-orders', getOrders)
@@ -19,7 +19,7 @@ const ManageAllOrders = () => {
     }
 
     const updateToShipped = async _id => {
-        const { data } = await axiosPrivate.patch(`https://young-brushlands-57803.herokuapp.com/order/${_id}`)
+        const { data } = await axiosPrivate.patch(`https://secure-fjord-36331.herokuapp.com/order/${_id}`)
         if (data.success) {
             refetch()
             toast.success(data.message)
@@ -27,7 +27,7 @@ const ManageAllOrders = () => {
     }
 
     const cancelOrderHandle = async _id => {
-        const { data } = await axiosPrivate.delete(`https://young-brushlands-57803.herokuapp.com/order/${_id}`)
+        const { data } = await axiosPrivate.delete(`https://secure-fjord-36331.herokuapp.com/order/${_id}`)
         if (data.success) {
             refetch()
             toast.success(data.message)

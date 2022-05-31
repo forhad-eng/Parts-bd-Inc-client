@@ -14,9 +14,7 @@ const MyOrders = () => {
 
     const getOrders = async () => {
         if (user) {
-            const { data } = await axiosPrivate.get(
-                `https://young-brushlands-57803.herokuapp.com/order/user/${user.email}`
-            )
+            const { data } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/order/user/${user.email}`)
             return data
         }
     }

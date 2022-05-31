@@ -29,7 +29,7 @@ const AddProduct = () => {
                 image: imageUrl
             }
             const { data: updatedData } = await axiosPrivate.post(
-                'https://young-brushlands-57803.herokuapp.com/parts',
+                'https://secure-fjord-36331.herokuapp.com/parts',
                 newProduct
             )
             if (updatedData.success) {

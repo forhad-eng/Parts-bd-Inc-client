@@ -6,7 +6,7 @@ const CancelModal = ({ order, refetch }) => {
     const { partsName, _id } = order
 
     const orderCancelHandle = async () => {
-        const { data } = await axiosPrivate.delete(`https://young-brushlands-57803.herokuapp.com/order/${_id}`)
+        const { data } = await axiosPrivate.delete(`https://secure-fjord-36331.herokuapp.com/order/${_id}`)
         if (data.success) {
             refetch()
             toast.success(data.message)

@@ -15,7 +15,7 @@ const Payment = () => {
     setPartsId(id)
 
     const getOrder = async ({ queryKey }) => {
-        const { data } = await axiosPrivate.get(`https://young-brushlands-57803.herokuapp.com/order/${queryKey[1]}`)
+        const { data } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/order/${queryKey[1]}`)
         return data
     }
     const { data, isLoading } = useQuery(['single-order', id], getOrder)

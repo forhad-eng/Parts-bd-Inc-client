@@ -9,7 +9,7 @@ const ManageProducts = () => {
     const [reqToDeleteProduct, setReqToDeleteProduct] = useState(null)
 
     const getUsers = async () => {
-        const { data } = await axiosPrivate.get('https://young-brushlands-57803.herokuapp.com/parts')
+        const { data } = await axiosPrivate.get('https://secure-fjord-36331.herokuapp.com/parts')
         return data
     }
     const { data, isLoading, refetch } = useQuery('all-parts', getUsers)
@@ -19,7 +19,7 @@ const ManageProducts = () => {
     }
 
     const deleteProductHandle = async _id => {
-        const { data } = await axiosPrivate.delete(`https://young-brushlands-57803.herokuapp.com/parts/${_id}`)
+        const { data } = await axiosPrivate.delete(`https://secure-fjord-36331.herokuapp.com/parts/${_id}`)
         if (data.success) {
             refetch()
             toast.success(data.message)

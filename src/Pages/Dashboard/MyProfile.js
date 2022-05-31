@@ -29,7 +29,7 @@ const MyProfile = () => {
         }
 
         const { data } = await axiosPrivate.put(
-            `https://young-brushlands-57803.herokuapp.com/user/update/${email}`,
+            `https://secure-fjord-36331.herokuapp.com/user/update/${email}`,
             updatedField
         )
         if (data.success) {

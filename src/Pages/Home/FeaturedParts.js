@@ -12,7 +12,7 @@ const FeaturedParts = () => {
 
     const getParts = async ({ queryKey }) => {
         const { data } = await axiosPrivate.get(
-            `https://young-brushlands-57803.herokuapp.com/parts?page=${queryKey[1]}&size=${queryKey[2]}`
+            `https://secure-fjord-36331.herokuapp.com/parts?page=${queryKey[1]}&size=${queryKey[2]}`
         )
         return data
     }
