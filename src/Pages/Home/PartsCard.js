@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const PartsCard = ({ parts }) => {
     const { _id, name, image, price, description, minOrder, available } = parts
     return (
-        <div class="card bg-base-100 shadow-lg">
+        <div data-aos="zoom-out-up" data-aos-duration="1500" class="card bg-base-100 shadow-lg">
             <figure>
                 <img src={image} alt="Shoes" className="hover:scale-95 transition-all" />
             </figure>
