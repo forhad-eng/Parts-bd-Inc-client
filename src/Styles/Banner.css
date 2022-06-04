@@ -3,7 +3,7 @@
     background-position: 50%;
     background-size: 'cover';
     background-repeat: 'no-repeat';
-    height: calc(100vh - 110px);
+    height: calc(100vh - 115px);
     display: flex;
     flex-direction: column;
     align-items: center;

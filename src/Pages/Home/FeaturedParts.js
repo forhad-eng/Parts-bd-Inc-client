@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { useQuery } from 'react-query'
 import axiosPrivate from '../../api/axiosPrivate'
+import '../../Styles/Banner.css'
 import LoadingSpinner from '../Shared/LoadingSpinner'
 import PartsCard from './PartsCard'
 
 const FeaturedParts = () => {
     const [page, setPage] = useState(0)
-    const [size, setSize] = useState(3)
+    const [size, setSize] = useState(4)
 
     const getParts = async ({ queryKey }) => {
         const { data } = await axiosPrivate.get(
@@ -52,7 +53,7 @@ const FeaturedParts = () => {
                 </div>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-16 mt-8">
+            <div className="grid lg:grid-cols-4 gap-10 mt-8">
                 {data?.data?.map(parts => (
                     <PartsCard parts={parts} />
                 ))}

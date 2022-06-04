@@ -41,7 +41,7 @@ const Offers = () => {
                 </div>
 
                 <div>
-                    <div className="flex gap-5">
+                    <div className="flex gap-5 mb-6">
                         <p className={`text-md font-semibold ${pathname === '/' && 'border-b-2 border-b-primary'}`}>
                             <Link to="/">Best Sellers</Link>
                         </p>
@@ -53,7 +53,6 @@ const Offers = () => {
                             <Link to="top-rated">Top Rated</Link>
                         </p>
                     </div>
-                    <hr className="mb-6" />
                     <Outlet />
                 </div>
             </div>
