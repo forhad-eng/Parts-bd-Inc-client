@@ -7,9 +7,12 @@ const BusinessSummary = () => {
     return (
         <div>
             <h2 className="text-3xl uppercase font-semibold text-center">Our Statistics At A Glance</h2>
-            <p p className="w-fit mx-auto border-b-[1px] border-primary">
+            <p p className="w-fit mx-auto text-gray-400">
                 Get Insight
             </p>
+            <hr className="border-primary w-20 h-[1px] mx-auto" />
+            <hr className="border-primary w-16 h-[1px] mx-auto mt-1" />
+            <hr className="border-primary w-12 h-[1px] mx-auto mt-1" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 my-14 md:mt-16 md:mb-24 md:px-24 text-center">
                 <div>
                     <FontAwesomeIcon icon={faUserAlt} className="w-6 h-6 text-primary bg-gray-100 rounded-full p-3" />

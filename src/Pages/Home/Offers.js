@@ -20,8 +20,10 @@ const Offers = () => {
     return (
         <div className="my-20">
             <h1 className="text-3xl font-semibold text-center">Attention! Deal Zone </h1>
-            <p className="text-gray-500 text-center">Hurry up! Discounts up to 70% </p>
-
+            <p className="text-gray-400 text-center">Hurry up! Discounts up to 70% </p>
+            <hr className="border-primary w-20 h-[1px] mx-auto" />
+            <hr className="border-primary w-16 h-[1px] mx-auto mt-1" />
+            <hr className="border-primary w-12 h-[1px] mx-auto mt-1" />
             <div className="deals grid lg:grid-cols-4 gap-6 lg:gap-7 p-7 py-12 lg:p-24 mt-10">
                 {data?.data?.slice(4, 8).map(item => (
                     <PartsCard parts={item} />

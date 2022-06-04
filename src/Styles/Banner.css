@@ -1,30 +1,3 @@
-.banner {
-    background: url('../assets//banner.jpg');
-    background-position: 50%;
-    background-size: 'cover';
-    background-repeat: 'no-repeat';
-    height: calc(100vh - 115px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.banner .title {
-    font-size: 52px;
-    font-weight: 500;
-    color: white;
-    text-align: center;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    margin: 0;
-}
-
-.banner .sub-title {
-    margin-top: 4px;
-    font-size: 22px;
-    color: white;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
 .deals {
     background: rgba(0, 0, 0, 0.8) url('../assets/sale.jpg');
     background-size: cover;
@@ -59,20 +32,6 @@
 }
 
 @media only screen and (max-width: 380px) {
-    .banner {
-        background-position: 60%;
-        height: calc(100vh - 320px);
-    }
-
-    .banner .title {
-        font-size: 35px;
-    }
-
-    .banner .sub-title {
-        font-size: 20px;
-        text-align: center;
-    }
-
     .offers {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -84,17 +43,6 @@
 }
 
 @media only screen and (min-width: 381px) and (max-width: 576px) {
-    .banner {
-        background-position: 60%;
-        height: calc(100vh - 360px);
-    }
-    .banner .title {
-        font-size: 35px;
-    }
-    .banner .sub-title {
-        font-size: 20px;
-        text-align: center;
-    }
     .offers {
         grid-template-columns: 1fr;
         gap: 20px;

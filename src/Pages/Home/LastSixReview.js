@@ -23,6 +23,9 @@ const LastSixReview = () => {
         <div className="max-w-7xl mx-auto mb-20 px-6 lg:px-10 mt-6">
             <h2 className="text-3xl text-center font-semibold">Customers Review</h2>
             <p className="text-center text-gray-400">What our customers say</p>
+            <hr className="border-primary w-20 h-[1px] mx-auto" />
+            <hr className="border-primary w-16 h-[1px] mx-auto mt-1" />
+            <hr className="border-primary w-12 h-[1px] mx-auto mt-1" />
             <div className="grid lg:grid-cols-3 gap-x-10 gap-y-5 mt-8">
                 {lastSixData.slice(0, 6).map(review => (
                     <div className="rounded-2xl border-2 border-primary flex items-center gap-5 p-5">
