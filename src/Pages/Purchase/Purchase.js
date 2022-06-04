@@ -29,7 +29,7 @@ const Purchase = () => {
 
     useEffect(() => {
         const getParts = async () => {
-            const { data } = await axiosPrivate.get(`http://secure-fjord-36331.herokuapp.com/parts/${id}`)
+            const { data } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/parts/${id}`)
             if (data) {
                 setParts(data)
                 setQuantity(data.minOrder)
