@@ -5,8 +5,8 @@ import Counter from '../Shared/Counter'
 
 const BusinessSummary = () => {
     return (
-        <div className="max-w-7xl mx-auto mb-20 px-10 lg:px-10 mt-6">
-            <div className="flex justify-center items-center gap-5 md:gap-10 mt-14">
+        <div className="max-w-7xl mx-auto mb-20 lg:px-10 mt-6">
+            <div className="flex justify-center items-center gap-5 md:gap-10 mt-14 px-6">
                 <div>
                     <hr className="border-[#363C45] w-16 md:w-20 h-[1px] ml-auto" />
                     <hr className="border-[#363C45] w-24 md:w-40 h-[1px] mt-1" />
