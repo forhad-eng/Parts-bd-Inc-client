@@ -138,19 +138,40 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                <div className="mx-auto">
-                    <p className="uppercase font-bold">Subscribe Our Newsletter</p>
-                    <hr className=" mt-2 h-[2px] w-6 bg-[#ff0000] border-none" />
-                    <p className="text-sm text-[#c4c3c3] mt-3">
-                        Keep up on our always evolving products features and technology. Enter your e-mail and subscribe
-                        to our newsletter.
-                    </p>
-                    <input
-                        type="text"
-                        className="w-10/12 mt-3 p-2 pl-4 text-sm bg-[#6666661a] border-[1px] border-gray-800"
-                        placeholder="Enter Your Email"
-                    />
-                    <button className="bg-red-600 text-white mt-3 px-6 py-2">Subscribe</button>
+                <div className="lg:mx-auto">
+                    <p className="uppercase font-bold">About Us</p>
+                    <hr className="mt-2 h-[2px] w-6 bg-[#ff0000] border-none" />
+                    <ul className="text-sm list-disc ml-3">
+                        <li>
+                            <Link to="/all-cars" className="flex items-center mt-3">
+                                <p className="text-[#c4c3c3]">Who We Are</p>
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link to="/all-cars" className="flex mt-3">
+                                <p className="text-[#c4c3c3]">Our Works</p>
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link to="/all-cars" className="flex mt-3">
+                                <p className="text-[#c4c3c3]">Careers</p>
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link to="/all-cars" className="flex mt-3">
+                                <p className="text-[#c4c3c3]">Our Rating</p>
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link to="/all-cars" className="flex mt-3">
+                                <p className="text-[#c4c3c3]">Intl. Clients</p>
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
             </div>
 

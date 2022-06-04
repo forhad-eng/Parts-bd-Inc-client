@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const PartsCard = ({ parts }) => {
     const { _id, name, image, price, description, minOrder, available } = parts
     return (
-        <div data-aos="zoom-out-up" data-aos-duration="1500" class="rounded-2xl border-2 border-[#21252c]">
+        <div data-aos="zoom-out-up" data-aos-duration="1000" class="rounded-2xl border-2 border-[#21252c]">
             <figure>
                 <img
                     src={image}
