@@ -25,7 +25,7 @@ const Info = () => {
                     </div>
                 ))}
             </div>
-            <hr />
+            <hr className="hidden md:block" />
         </div>
     )
 }

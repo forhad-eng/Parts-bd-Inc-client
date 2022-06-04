@@ -93,7 +93,7 @@
     .offers {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding: 0 28px;
+        padding: 0 35px;
     }
     .offers .offers-bg {
         height: 500px;

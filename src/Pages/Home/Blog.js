@@ -22,7 +22,7 @@ const Blog = () => {
             <hr className="border-primary w-16 h-[1px] mx-auto mt-1" />
             <hr className="border-primary w-12 h-[1px] mx-auto mt-1" />
 
-            <div className="grid md:grid-cols-2 gap-5 mt-14">
+            <div className="grid md:grid-cols-2 gap-5 mt-20">
                 <GetBlog img={img1} date="04" author="Depp" />
                 <GetBlog img={img2} date="12" author="Heard" />
             </div>

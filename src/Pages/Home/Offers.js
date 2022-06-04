@@ -19,16 +19,16 @@ const Offers = () => {
 
     return (
         <div className="my-20">
-            <div className="flex justify-center items-center gap-4 md:gap-10 mt-14">
-                <div className="">
+            <div className="flex justify-center items-center gap-4 md:gap-10 mt-14 px-6">
+                <div>
                     <hr className="border-[#363C45] w-16 md:w-20 h-[1px] ml-auto" />
-                    <hr className="border-[#363C45] w-20 md:w-40 h-[1px] mt-1" />
+                    <hr className="border-[#363C45] w-24 md:w-40 h-[1px] mt-1" />
                     <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mt-1 ml-auto" />
                 </div>
                 <h2 className="text-2xl md:text-3xl text-center uppercase font-semibold">Attention! Deal Zone</h2>
                 <div>
                     <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mr-auto" />
-                    <hr className="border-[#363C45] w-20 md:w-40 h-[1px] mt-1" />
+                    <hr className="border-[#363C45] w-24 md:w-40 h-[1px] mt-1" />
                     <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mt-1 mr-auto" />
                 </div>
             </div>
