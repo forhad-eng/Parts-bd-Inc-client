@@ -3,6 +3,7 @@ import 'aos/dist/aos.css'
 import React, { useEffect } from 'react'
 import SetTitle from '../Shared/SetTitle'
 import Banner from './Banner'
+import Blog from './Blog'
 import BusinessSummary from './BusinessSummary'
 import FeaturedParts from './FeaturedParts'
 import Info from './Info'
@@ -25,6 +26,7 @@ const Home = () => {
             <Testimonial />
             <LastSixReview />
             <BusinessSummary />
+            <Blog />
         </div>
     )
 }

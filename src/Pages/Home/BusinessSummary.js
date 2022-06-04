@@ -6,7 +6,19 @@ import Counter from '../Shared/Counter'
 const BusinessSummary = () => {
     return (
         <div>
-            <h2 className="text-3xl uppercase font-semibold text-center">Our Statistics At A Glance</h2>
+            <div className="flex justify-center items-center gap-5 md:gap-10 mt-14">
+                <div className="">
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] ml-auto" />
+                    <hr className="border-[#363C45] w-40 h-[1px] mt-1" />
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mt-1 ml-auto" />
+                </div>
+                <h2 className="text-2xl md:text-3xl text-center uppercase font-semibold">Our Statistics At A Glance</h2>
+                <div>
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mr-auto" />
+                    <hr className="border-[#363C45] w-40 h-[1px] mt-1" />
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mt-1 mr-auto" />
+                </div>
+            </div>
             <p p className="w-fit mx-auto text-gray-400">
                 Get Insight
             </p>

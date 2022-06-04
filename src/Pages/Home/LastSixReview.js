@@ -21,7 +21,19 @@ const LastSixReview = () => {
 
     return (
         <div className="max-w-7xl mx-auto mb-20 px-6 lg:px-10 mt-6 md:mt-14">
-            <h2 className="text-3xl text-center font-semibold">Customers Review</h2>
+            <div className="flex justify-center items-center gap-5 md:gap-10 mt-14">
+                <div className="">
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] ml-auto" />
+                    <hr className="border-[#363C45] w-40 h-[1px] mt-1" />
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mt-1 ml-auto" />
+                </div>
+                <h2 className="text-2xl md:text-3xl text-center uppercase font-semibold">Customers Review</h2>
+                <div>
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mr-auto" />
+                    <hr className="border-[#363C45] w-40 h-[1px] mt-1" />
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mt-1 mr-auto" />
+                </div>
+            </div>
             <p className="text-center text-gray-400">What our customers say</p>
             <hr className="border-primary w-20 h-[1px] mx-auto" />
             <hr className="border-primary w-16 h-[1px] mx-auto mt-1" />
