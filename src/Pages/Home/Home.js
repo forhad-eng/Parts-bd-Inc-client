@@ -8,6 +8,7 @@ import FeaturedParts from './FeaturedParts'
 import Info from './Info'
 import LastSixReview from './LastSixReview'
 import Offers from './Offers'
+import Testimonial from './Testimonial'
 
 const Home = () => {
     useEffect(() => {
@@ -21,6 +22,7 @@ const Home = () => {
             <Info />
             <FeaturedParts />
             <Offers />
+            <Testimonial />
             <LastSixReview />
             <BusinessSummary />
         </div>

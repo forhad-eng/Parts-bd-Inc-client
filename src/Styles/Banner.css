@@ -31,6 +31,49 @@
     margin-bottom: 10px;
 }
 
+.testimonial {
+    background: url('../assets/testi_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.desc {
+    max-width: 750px;
+    margin: 25px auto 0;
+    font-size: 13px;
+    line-height: 24px;
+    color: #90939c;
+    font-family: 'Rubik', sans serif;
+    position: relative;
+}
+
+.desc::before,
+.desc::after {
+    background-color: transparent;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-image: url('../assets/comma.png');
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+    content: '';
+    width: 51px;
+    height: 41px;
+    position: absolute;
+    top: 0;
+}
+.desc::before {
+    background-position-x: left;
+    left: -90px;
+}
+.desc::after {
+    background-position-x: right;
+    right: -90px;
+}
+
 @media only screen and (max-width: 380px) {
     .offers {
         grid-template-columns: 1fr;

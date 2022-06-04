@@ -20,7 +20,7 @@ const LastSixReview = () => {
     data?.map(item => lastSixData.unshift(item))
 
     return (
-        <div className="max-w-7xl mx-auto mb-20 px-6 lg:px-10 mt-6">
+        <div className="max-w-7xl mx-auto mb-20 px-6 lg:px-10 mt-6 md:mt-14">
             <h2 className="text-3xl text-center font-semibold">Customers Review</h2>
             <p className="text-center text-gray-400">What our customers say</p>
             <hr className="border-primary w-20 h-[1px] mx-auto" />
