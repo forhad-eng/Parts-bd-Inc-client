@@ -17,7 +17,6 @@ import AllReview from './Pages/Home/AllReview'
 import BestSeller from './Pages/Home/BestSeller'
 import Blogs from './Pages/Home/Blogs'
 import Home from './Pages/Home/Home'
-import MyPortfolio from './Pages/Home/MyPortfolio'
 import TopRated from './Pages/Home/TopRated'
 import Login from './Pages/Login/Login'
 import RequireAdmin from './Pages/Login/RequireAdmin'
@@ -44,7 +43,6 @@ function App() {
                     </Route>
                     <Route path="/review" element={<AllReview />} />
                     <Route path="/blogs" element={<Blogs />} />
-                    <Route path="/my-portfolio" element={<MyPortfolio />} />
                     <Route
                         path="/purchase/:id"
                         element={

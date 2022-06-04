@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { PartsIdContext } from '../../App'
+import footerBg from '../../assets/footer.jpg'
 
 const Footer = () => {
     const { partsId } = useContext(PartsIdContext)
@@ -30,7 +31,7 @@ const Footer = () => {
     }
 
     return (
-        <footer className={`bg-[#333333] ${path ? 'block' : 'hidden'}`}>
+        <footer className={`${path ? 'block' : 'hidden'}`} style={{background: `url(${footerBg})`}}>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto px-7 py-14 lg:px-10 text-white">
                 <div>
                     <div>

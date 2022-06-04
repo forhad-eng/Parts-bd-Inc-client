@@ -25,17 +25,18 @@ const Purchase = () => {
         formState: { errors },
         reset
     } = useForm()
+    const [runEffect, setRunEffect] = useState(false)
 
     useEffect(() => {
         const getParts = async () => {
-            const { data } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/parts/${id}`)
+            const { data } = await axiosPrivate.get(`http://secure-fjord-36331.herokuapp.com/parts/${id}`)
             if (data) {
                 setParts(data)
                 setQuantity(data.minOrder)
             }
         }
         getParts()
-    }, [])
+    }, [id, runEffect])
 
     const orderQuantityHandle = e => {
         setQuantity(e.target.value)
@@ -61,6 +62,7 @@ const Purchase = () => {
         const { data: result } = await axiosPrivate.post('https://secure-fjord-36331.herokuapp.com/order', order)
         if (result.success) {
             toast.success(result.message, { toastId: 'orderConfirmed' })
+            setRunEffect(!runEffect)
             reset()
         }
     }
