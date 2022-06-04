@@ -83,6 +83,10 @@
     .offers .offers-bg {
         height: 500px;
     }
+    .desc::before,
+    .desc::after {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 381px) and (max-width: 576px) {
@@ -93,5 +97,9 @@
     }
     .offers .offers-bg {
         height: 500px;
+    }
+    .desc::before,
+    .desc::after {
+        display: none;
     }
 }

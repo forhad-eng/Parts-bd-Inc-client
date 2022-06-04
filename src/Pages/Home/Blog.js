@@ -5,18 +5,17 @@ import img2 from '../../assets/blog-img2.jpg'
 const Blog = () => {
     return (
         <div className="max-w-7xl mx-auto mb-20 px-6 lg:px-10 mt-6 md:mt-14">
-            <hr className="border-[#363C45] h-[1px] mx-auto" />
             <div className="flex justify-center items-center gap-5 md:gap-10 mt-14">
                 <div className="">
-                    <hr className="border-[#363C45] w-20 h-[1px] ml-auto" />
-                    <hr className="border-[#363C45] w-40 h-[1px] mt-1" />
-                    <hr className="border-[#363C45] w-20 h-[1px] mt-1 ml-auto" />
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] ml-auto" />
+                    <hr className="border-[#363C45] w-24 md:w-40 h-[1px] mt-1" />
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mt-1 ml-auto" />
                 </div>
                 <h2 className="text-2xl md:text-3xl text-center uppercase font-semibold">Latest Blog Post</h2>
                 <div>
-                    <hr className="border-[#363C45] w-20 h-[1px] mr-auto" />
-                    <hr className="border-[#363C45] w-40 h-[1px] mt-1" />
-                    <hr className="border-[#363C45] w-20 h-[1px] mt-1 mr-auto" />
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mr-auto" />
+                    <hr className="border-[#363C45] w-24 md:w-40 h-[1px] mt-1" />
+                    <hr className="border-[#363C45] w-16 md:w-20 h-[1px] mt-1 mr-auto" />
                 </div>
             </div>
             <hr className="border-primary w-20 h-[1px] mx-auto" />

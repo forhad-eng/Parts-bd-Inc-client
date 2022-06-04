@@ -5,6 +5,7 @@ import SetTitle from '../Shared/SetTitle'
 import Banner from './Banner'
 import Blog from './Blog'
 import BusinessSummary from './BusinessSummary'
+import EmailSubscription from './EmailSubscription'
 import FeaturedParts from './FeaturedParts'
 import Info from './Info'
 import LastSixReview from './LastSixReview'
@@ -27,6 +28,7 @@ const Home = () => {
             <LastSixReview />
             <BusinessSummary />
             <Blog />
+            <EmailSubscription />
         </div>
     )
 }

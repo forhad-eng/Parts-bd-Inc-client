@@ -15,7 +15,7 @@ import Payment from './Pages/Dashboard/Payment'
 import UpdateProfile from './Pages/Dashboard/UpdateProfile'
 import AllReview from './Pages/Home/AllReview'
 import BestSeller from './Pages/Home/BestSeller'
-import Blogs from './Pages/Home/Blogs'
+import Blog from './Pages/Home/Blog'
 import Home from './Pages/Home/Home'
 import TopRated from './Pages/Home/TopRated'
 import Login from './Pages/Login/Login'
@@ -42,7 +42,7 @@ function App() {
                         <Route path="top-rated" element={<TopRated />} />
                     </Route>
                     <Route path="/review" element={<AllReview />} />
-                    <Route path="/blogs" element={<Blogs />} />
+                    <Route path="/blogs" element={<Blog />} />
                     <Route
                         path="/purchase/:id"
                         element={
