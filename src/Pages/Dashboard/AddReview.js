@@ -27,23 +27,25 @@ const AddReview = () => {
     }
 
     return (
-        <form onSubmit={e => reviewHandle(e)} className="card max-w-sm lg:max-w-sm shadow">
+        <div>
             <SetTitle title={'Add Review'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Add Review</h2>
-            <hr className="mb-6" />
-            <div className="mb-4 pl-10">
-                <label className="font-bold">Ratings</label>
-                <ReactStars count={5} onChange={setRating} size={24} activeColor="#ffd700" />
-                <label className="font-bold block mt-2">Description</label>
-                <textarea
-                    name="ratingDes"
-                    cols="30"
-                    rows="5"
-                    className="border-[1px] rounded-lg mt-2 pl-4 pt-2"
-                ></textarea>
-                <button className="btn btn-primary w-fit my-4">Submit</button>
-            </div>
-        </form>
+            <hr className="border-primary h-[1px] mb-6 w-full" />
+            <form onSubmit={e => reviewHandle(e)} className="card max-w-sm lg:max-w-sm shadow">
+                <div className="mb-4 pl-10">
+                    <label className="font-bold">Ratings</label>
+                    <ReactStars count={5} onChange={setRating} size={24} activeColor="#ffd700" />
+                    <label className="font-bold block mt-2">Description</label>
+                    <textarea
+                        name="ratingDes"
+                        cols="30"
+                        rows="5"
+                        className="border-[1px] rounded-lg mt-2 pl-4 pt-2"
+                    ></textarea>
+                    <button className="btn btn-primary w-fit my-4">Submit</button>
+                </div>
+            </form>
+        </div>
     )
 }
 

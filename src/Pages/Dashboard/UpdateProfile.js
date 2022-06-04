@@ -45,10 +45,10 @@ const UpdateProfile = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="shadow rounded-xl px-6 pb-10 lg:p-0 lg:px-20 lg:pb-10">
             <SetTitle title={'Update Profile'} />
-            <div className="grid lg:grid-cols-2 gap-x-10">
+            <div className="grid lg:grid-cols-2 gap-x-10 text-neutral">
                 <div className="form-control mt-2">
                     <label className="label">
-                        <span className="label-text">Name</span>
+                        <span className="label-text text-white">Name</span>
                     </label>
                     <input
                         {...register('name')}
@@ -61,7 +61,7 @@ const UpdateProfile = () => {
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
-                        <span className="label-text">Email</span>
+                        <span className="label-text text-white">Email</span>
                     </label>
                     <input
                         {...register('email')}
@@ -74,7 +74,7 @@ const UpdateProfile = () => {
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
-                        <span className="label-text">Education</span>
+                        <span className="label-text text-white">Education</span>
                     </label>
                     <input
                         {...register('education')}
@@ -87,7 +87,7 @@ const UpdateProfile = () => {
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
-                        <span className="label-text">City</span>
+                        <span className="label-text text-white">City</span>
                     </label>
                     <input
                         {...register('city')}
@@ -100,7 +100,7 @@ const UpdateProfile = () => {
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
-                        <span className="label-text">Division</span>
+                        <span className="label-text text-white">Division</span>
                     </label>
                     <input
                         {...register('division')}
@@ -113,7 +113,7 @@ const UpdateProfile = () => {
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
-                        <span className="label-text">Phone</span>
+                        <span className="label-text text-white">Phone</span>
                     </label>
                     <input
                         {...register('phone')}
@@ -126,7 +126,7 @@ const UpdateProfile = () => {
                 </div>
                 <div className="form-control mt-2">
                     <label className="label">
-                        <span className="label-text">LinkedIn</span>
+                        <span className="label-text text-white">LinkedIn</span>
                     </label>
                     <input
                         {...register('linkedIn')}

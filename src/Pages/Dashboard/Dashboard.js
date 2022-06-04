@@ -18,38 +18,42 @@ const Dashboard = () => {
         <div class="drawer drawer-mobile max-w-7xl mx-auto lg:mb-20 lg:px-10 p-4">
             <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content px-2 lg:px-4 py-1">
-                <Outlet />
+                <div className="border-2 border-primary rounded-lg">
+                    <Outlet />
+                </div>
             </div>
-            <div class="drawer-side shadow rounded-lg">
+            <div class="drawer-side shadow rounded-lg border-2 border-primary text-white">
                 <label for="dashboard-drawer" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content">
-                    <li>
-                        <Link to="/dashboard" className={`${pathname === '/dashboard' && 'bg-primary text-white'}`}>
-                            My Profile
-                        </Link>
+                <ul class="menu p-4 overflow-y-auto w-64">
+                    <li className={`${pathname === '/dashboard' && 'border-b-2 border-primary'}`}>
+                        <Link to="/dashboard">My Profile</Link>
                     </li>
                     {admin && (
                         <>
-                            <li>
+                            <li className={`${pathname === '/dashboard/all-users' && 'border-b-2 border-primary'}`}>
                                 <Link to="all-users">All Users</Link>
                             </li>
-                            <li>
+                            <li className={`${pathname === '/dashboard/manage-orders' && 'border-b-2 border-primary'}`}>
                                 <Link to="manage-orders">Manage All Orders</Link>
                             </li>
-                            <li>
+                            <li
+                                className={`${
+                                    pathname === '/dashboard/manage-productss' && 'border-b-2 border-primary'
+                                }`}
+                            >
                                 <Link to="manage-products">Manage Products</Link>
                             </li>
-                            <li>
+                            <li className={`${pathname === '/dashboard/add-product' && 'border-b-2 border-primary'}`}>
                                 <Link to="add-product">Add Product</Link>
                             </li>
                         </>
                     )}
                     {!admin && (
                         <>
-                            <li>
+                            <li className={`${pathname === '/dashboard/my-orders' && 'border-b-2 border-primary'}`}>
                                 <Link to="my-orders">My Orders</Link>
                             </li>
-                            <li>
+                            <li className={`${pathname === '/dashboard/add-review' && 'border-b-2 border-primary'}`}>
                                 <Link to="add-review">Add a Review</Link>
                             </li>
                         </>

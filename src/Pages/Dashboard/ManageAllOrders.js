@@ -51,7 +51,7 @@ const ManageAllOrders = () => {
                     </Link>
                 </div>
             </div>
-            <hr className="mb-6" />
+            <hr className="border-primary h-[1px] mb-6" />
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>

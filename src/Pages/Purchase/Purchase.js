@@ -68,7 +68,7 @@ const Purchase = () => {
     }
 
     return (
-        <div className="min-h-screen bg-base-200 pb-20 lg:pb-0">
+        <div className="min-h-screen bg-base-200 pb-20 lg:pb-0 text-neutral">
             <SetTitle title={'Purchase'} />
             <h2 className="text-3xl font-semibold text-center pt-8 md:pt-8 md:pb-10">Your selected item!</h2>
             <div class="flex flex-col md:flex-row justify-center items-center gap-10 px-6">

@@ -30,7 +30,7 @@ const ManageProducts = () => {
         <div className="shadow rounded-xl mb-8 lg:mb-0">
             <SetTitle title={'Manage Products'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Manage Products</h2>
-            <hr className="mb-6" />
+            <hr className="border-primary h-[1px] mb-6" />
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>

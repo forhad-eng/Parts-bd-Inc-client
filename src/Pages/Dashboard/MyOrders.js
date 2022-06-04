@@ -29,11 +29,11 @@ const MyOrders = () => {
         <div class="overflow-x-auto shadow rounded-xl pb-6">
             <SetTitle title={'My Orders'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">My Orders</h2>
-            <hr className="mb-6" />
+            <hr className="border-primary h-[1px] mb-6" />
             {data.length ? (
                 <table class="table w-full">
                     <thead>
-                        <tr>
+                        <tr className="text-neutral">
                             <th></th>
                             <th>Name</th>
                             <th>Quantity</th>
@@ -43,7 +43,7 @@ const MyOrders = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-black">
                         {data?.map((order, index) => (
                             <MyOrderRow order={order} setOrder={setOrder} index={index} />
                         ))}
