@@ -36,11 +36,11 @@ const AllUsers = () => {
         <div className="shadow rounded-xl">
             <SetTitle title={'All Users'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">All Users</h2>
-            <hr className="border-primary h-[1px] mb-6" />
+            <hr className="border-[#21252c] h-[1px] mb-6" />
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
-                        <tr>
+                        <tr className="text-black">
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
@@ -48,7 +48,7 @@ const AllUsers = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-black">
                         {data.map((user, index) => (
                             <tr>
                                 <th>{index + 1}</th>

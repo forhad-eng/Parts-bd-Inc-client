@@ -44,14 +44,14 @@ const SignUp = () => {
 
     return (
         <div className="px-5">
-            <div className="card card-body max-w-sm lg:max-w-md mx-auto shadow mt-14 mb-20">
+            <div className="card card-body max-w-sm lg:max-w-md mx-auto shadow mt-14 mb-20 border-2 border-[#21252c]">
                 <SetTitle title={'Sign Up'} />
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <h3 className="text-2xl font-semibold mb-1">Sign Up</h3>
+                <form onSubmit={handleSubmit(onSubmit)} className="text-black">
+                    <h3 className="text-2xl font-semibold mb-1 text-white">Sign Up</h3>
                     <hr />
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">
+                            <span className="label-text text-white">
                                 Name<span className="text-red"> *</span>
                             </span>
                         </label>
@@ -67,7 +67,7 @@ const SignUp = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">
+                            <span className="label-text text-white">
                                 Email<span className="text-red"> *</span>
                             </span>
                         </label>
@@ -85,7 +85,7 @@ const SignUp = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">
+                            <span className="label-text text-white">
                                 Password<span className="text-red"> *</span>
                             </span>
                         </label>
@@ -109,7 +109,7 @@ const SignUp = () => {
                     <div className="form-control mt-4">
                         <button className="btn btn-primary text-white uppercase">Sign Up</button>
                     </div>
-                    <button className="label-text-alt text-left">
+                    <button className="label-text-alt text-left text-white">
                         Already have an account?
                         <Link to="/login" className="hover:underline">
                             <span className="ml-1 text-accent">Login</span>

@@ -27,14 +27,14 @@ const ManageProducts = () => {
     }
 
     return (
-        <div className="shadow rounded-xl mb-8 lg:mb-0">
+        <div className="shadow rounded-xl lg:mb-0">
             <SetTitle title={'Manage Products'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Manage Products</h2>
-            <hr className="border-primary h-[1px] mb-6" />
+            <hr className="border-[#21252c] h-[1px] mb-6" />
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
-                        <tr>
+                        <tr className="text-black">
                             <th></th>
                             <th>Image</th>
                             <th>Name</th>
@@ -43,7 +43,7 @@ const ManageProducts = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-black">
                         {data?.data?.map((item, index) => (
                             <tr>
                                 <th>{index + 1}</th>

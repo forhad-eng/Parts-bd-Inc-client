@@ -45,7 +45,7 @@ const UpdateProfile = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="shadow rounded-xl px-6 pb-10 lg:p-0 lg:px-20 lg:pb-10">
             <SetTitle title={'Update Profile'} />
-            <div className="grid lg:grid-cols-2 gap-x-10 text-neutral">
+            <div className="grid lg:grid-cols-2 gap-x-10 text-black">
                 <div className="form-control mt-2">
                     <label className="label">
                         <span className="label-text text-white">Name</span>

@@ -51,11 +51,11 @@ const ManageAllOrders = () => {
                     </Link>
                 </div>
             </div>
-            <hr className="border-primary h-[1px] mb-6" />
+            <hr className="border-[#21252c] h-[1px] mb-6" />
             <div class="overflow-x-auto">
-                <table class="table w-full">
+                <table class="table w-full mb-6">
                     <thead>
-                        <tr>
+                        <tr className="text-black">
                             <th></th>
                             <th>User</th>
                             <th>Product</th>
@@ -64,7 +64,7 @@ const ManageAllOrders = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-black">
                         {data.map((item, index) => (
                             <tr>
                                 <th>{index + 1}</th>

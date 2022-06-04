@@ -47,7 +47,7 @@ const MyProfile = () => {
         <div className="shadow rounded-xl">
             <SetTitle title={'My Profile'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">My Profile</h2>
-            <hr className="border-primary h-[1px] mb-6" />
+            <hr className="border-[#21252c] h-[1px] mb-6" />
             <div className="pl-4 pb-10 lg:pl-10">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-col lg:flex-row lg:gap-20 mb-2">

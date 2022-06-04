@@ -27,11 +27,11 @@ const LastSixReview = () => {
             <hr className="border-primary w-16 h-[1px] mx-auto mt-1" />
             <hr className="border-primary w-12 h-[1px] mx-auto mt-1" />
             <div className="grid lg:grid-cols-3 gap-x-10 gap-y-5 mt-8">
-                {lastSixData.slice(0, 6).map(review => (
+                {lastSixData.slice(0, 6).map((review, index) => (
                     <div className="rounded-2xl border-2 border-primary flex items-center gap-5 p-5">
                         <div class="avatar">
                             <div class="w-14 rounded-full">
-                                <img src="https://api.lorem.space/image/face?hash=92310" alt="user" />
+                                <img src={`https://picsum.photos/200/300?random=${index}`} alt="user" />
                             </div>
                         </div>
                         <div>

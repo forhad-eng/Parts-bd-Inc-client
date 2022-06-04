@@ -15,16 +15,16 @@ const Dashboard = () => {
     }
 
     return (
-        <div class="drawer drawer-mobile max-w-7xl mx-auto lg:mb-20 lg:px-10 p-4">
+        <div class="drawer drawer-mobile max-w-7xl mx-auto mb-10 lg:mb-20 lg:px-10 p-4">
             <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content px-2 lg:px-4 py-1">
-                <div className="border-2 border-primary rounded-lg">
+                <div className="border-2 border-[#21252c] rounded-lg">
                     <Outlet />
                 </div>
             </div>
-            <div class="drawer-side shadow rounded-lg border-2 border-primary text-white">
+            <div class="drawer-side shadow rounded-lg border-2 border-[#21252c] text-white">
                 <label for="dashboard-drawer" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-64">
+                <ul class="menu p-4 overflow-y-auto w-64 bg-[#14151b]">
                     <li className={`${pathname === '/dashboard' && 'border-b-2 border-primary'}`}>
                         <Link to="/dashboard">My Profile</Link>
                     </li>
@@ -38,7 +38,7 @@ const Dashboard = () => {
                             </li>
                             <li
                                 className={`${
-                                    pathname === '/dashboard/manage-productss' && 'border-b-2 border-primary'
+                                    pathname === '/dashboard/manage-products' && 'border-b-2 border-primary'
                                 }`}
                             >
                                 <Link to="manage-products">Manage Products</Link>

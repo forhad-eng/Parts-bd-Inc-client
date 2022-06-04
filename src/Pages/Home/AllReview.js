@@ -23,11 +23,11 @@ const AllReview = () => {
             <h2 className="text-3xl text-center font-semibold">Customers Review</h2>
             <p className="text-center text-gray-400">What our customers say</p>
             <div className="grid lg:grid-cols-3 gap-x-10 gap-y-5 mt-8">
-                {data.map(review => (
+                {data.map((review, index) => (
                     <div className="rounded-2xl border-2 border-primary flex items-center gap-5 p-5">
                         <div class="avatar">
                             <div class="w-14 rounded-full">
-                                <img src="https://api.lorem.space/image/face?hash=92310" alt="user" />
+                                <img src={`https://picsum.photos/200/300?random=${index}`} alt="user" />
                             </div>
                         </div>
                         <div>

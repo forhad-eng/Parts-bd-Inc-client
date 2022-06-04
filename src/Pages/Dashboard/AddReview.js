@@ -30,7 +30,7 @@ const AddReview = () => {
         <div>
             <SetTitle title={'Add Review'} />
             <h2 className="text-2xl font-bold pt-4 pl-10 mb-2">Add Review</h2>
-            <hr className="border-primary h-[1px] mb-6 w-full" />
+            <hr className="border-[#21252c] h-[4px] mb-6 w-full" />
             <form onSubmit={e => reviewHandle(e)} className="card max-w-sm lg:max-w-sm shadow">
                 <div className="mb-4 pl-10">
                     <label className="font-bold">Ratings</label>
