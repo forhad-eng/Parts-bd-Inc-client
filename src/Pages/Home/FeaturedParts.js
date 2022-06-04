@@ -53,7 +53,7 @@ const FeaturedParts = () => {
                 </div>
             </div>
 
-            <div className="grid lg:grid-cols-4 gap-10 mt-8">
+            <div className="grid lg:grid-cols-4 gap-7 mt-8">
                 {data?.data?.map(parts => (
                     <PartsCard parts={parts} />
                 ))}

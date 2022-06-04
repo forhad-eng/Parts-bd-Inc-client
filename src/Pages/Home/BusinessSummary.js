@@ -12,13 +12,13 @@ const BusinessSummary = () => {
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 my-14 md:mt-16 md:mb-24 md:px-24 text-center">
                 <div>
-                    <FontAwesomeIcon icon={faUserAlt} className="w-6 h-6 text-secondary bg-gray-100 rounded-full p-3" />
+                    <FontAwesomeIcon icon={faUserAlt} className="w-6 h-6 text-primary bg-gray-100 rounded-full p-3" />
                     <p className="uppercase text-md font-[600] mt-2">Served Customer</p>
                     <hr className="block mx-auto mt-2 h-[2px] w-6 bg-primary border-none" />
                     <Counter end="380" />
                 </div>
                 <div>
-                    <FontAwesomeIcon icon={faDollar} className="w-6 h-6 text-secondary bg-gray-100 rounded-full p-3" />
+                    <FontAwesomeIcon icon={faDollar} className="w-6 h-6 text-primary bg-gray-100 rounded-full p-3" />
                     <p className="uppercase text-md font-[600] mt-2">Annual Revenue</p>
                     <hr className="block mx-auto mt-2 h-[2px] w-6 bg-primary border-none" />
                     <Counter end="150">
@@ -28,7 +28,7 @@ const BusinessSummary = () => {
                 <div>
                     <FontAwesomeIcon
                         icon={faCommentAlt}
-                        className="w-6 h-6 text-secondary bg-gray-100 rounded-full p-3"
+                        className="w-6 h-6 text-primary bg-gray-100 rounded-full p-3"
                     />
                     <p className="uppercase text-md font-[600] mt-2">Total Reviews</p>
                     <hr className="block mx-auto mt-2 h-[2px] w-6 bg-primary border-none" />
@@ -37,7 +37,7 @@ const BusinessSummary = () => {
                     </Counter>
                 </div>
                 <div>
-                    <FontAwesomeIcon icon={faTools} className="w-6 h-6 text-secondary bg-gray-100 rounded-full p-3" />
+                    <FontAwesomeIcon icon={faTools} className="w-6 h-6 text-primary bg-gray-100 rounded-full p-3" />
                     <p className="uppercase text-md font-[600] mt-2">Parts Manufacturing</p>
                     <hr className="block mx-auto mt-2 h-[2px] w-6 bg-primary border-none" />
                     <Counter end="60">

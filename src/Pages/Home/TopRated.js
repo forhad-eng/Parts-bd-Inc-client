@@ -16,7 +16,7 @@ const TopRated = () => {
     }
 
     return (
-        <div className="grid lg:grid-cols-3 gap-5">
+        <div className="grid lg:grid-cols-3 gap-7">
             {data?.data?.slice(0, 3).map(item => (
                 <PartsCard parts={item} />
             ))}

@@ -22,7 +22,7 @@ const Offers = () => {
             <h1 className="text-3xl font-semibold text-center">Attention! Deal Zone </h1>
             <p className="text-gray-500 text-center">Hurry up! Discounts up to 70% </p>
 
-            <div className="deals grid lg:grid-cols-4 gap-6 lg:gap-10 p-7 py-12 lg:p-24 mt-10">
+            <div className="deals grid lg:grid-cols-4 gap-6 lg:gap-7 p-7 py-12 lg:p-24 mt-10">
                 {data?.data?.slice(4, 8).map(item => (
                     <PartsCard parts={item} />
                 ))}

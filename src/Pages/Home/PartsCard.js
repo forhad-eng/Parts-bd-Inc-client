@@ -14,7 +14,7 @@ const PartsCard = ({ parts }) => {
                     className="hover:scale-95 transition-all rounded-tl-2xl rounded-tr-2xl w-full"
                 />
             </figure>
-            <div class="card-body pt-0 pl-3 mt-2">
+            <div class="card-body pt-0 pl-3 mt-2 ">
                 <h2 class="card-title">{name}</h2>
                 <p className="mb-0">{description}</p>
                 <small>
@@ -24,7 +24,7 @@ const PartsCard = ({ parts }) => {
                     Available: <span className="text-orange-600 font-bold">{available} Piece</span>
                 </small>
                 <div className="flex justify-between items-center">
-                    <p className="font-bold">${price}</p>
+                    <p className="font-bold text-orange-600">${price}</p>
                     <Link to={`/purchase/${_id}`}>
                         <button className="btn btn-primary btn-sm">
                             Place Order <FontAwesomeIcon className="ml-1" icon={faShoppingCart} />
