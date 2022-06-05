@@ -1,4 +1,4 @@
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faRightFromBracket, faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { signOut } from 'firebase/auth'
 import React, { useContext } from 'react'
@@ -47,31 +47,31 @@ const Navbar = () => {
     const menuItems = (
         <>
             <li>
-                <NavLink className="py-1 text-white hover:bg-info" to="/">
+                <NavLink className="md:py-1 text-white hover:bg-info" to="/">
                     Home
                 </NavLink>
             </li>
             <li>
-                <NavLink className="py-1  text-white hover:bg-info" to="/review">
+                <NavLink className="md:py-1  text-white hover:bg-info" to="/review">
                     Reviews
                 </NavLink>
             </li>
             <li>
-                <NavLink className="py-1  text-white hover:bg-info" to="/blogs">
+                <NavLink className="md:py-1  text-white hover:bg-info" to="/blogs">
                     Blogs
                 </NavLink>
             </li>
             {user ? (
                 <>
                     <li>
-                        <NavLink className="py-1 text-white hover:bg-info" to="/dashboard">
+                        <NavLink className="md:py-1 text-white hover:bg-info" to="/dashboard">
                             Dashboard
                         </NavLink>
                     </li>
 
                     <span className="flex items-center">
                         <button
-                            className="btn btn-primary btn-sm text-white font-normal hover:btn-info hover:text-white"
+                            className="btn btn-primary btn-sm w-full text-white font-normal hover:btn-info hover:text-white"
                             onClick={signOutHandle}
                         >
                             Sign Out <FontAwesomeIcon className="ml-2" icon={faRightFromBracket} />
@@ -80,8 +80,8 @@ const Navbar = () => {
                 </>
             ) : (
                 <Link to="/login" className="flex items-center">
-                    <button className="btn btn-primary btn-sm text-white font-normal hover:btn-info hover:text-white">
-                        Login
+                    <button className="btn btn-primary btn-sm w-full text-white font-normal hover:btn-info hover:text-white">
+                        Login <FontAwesomeIcon className="ml-2" icon={faRightToBracket} />
                     </button>
                 </Link>
             )}
@@ -110,7 +110,7 @@ const Navbar = () => {
                     </label>
                     <ul
                         tabIndex="0"
-                        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#21252c] rounded-box w-52"
+                        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#21252c] rounded-box w-40 gap-1"
                     >
                         {menuItems}
                     </ul>
@@ -132,7 +132,7 @@ const Navbar = () => {
                         </label>
                         <ul
                             tabIndex="0"
-                            class="dropdown-content menu menu-compact mt-3 p-2 shadow bg-[#21252c] rounded-box w-48"
+                            class="dropdown-content menu menu-compact mt-3 p-2 shadow bg-[#21252c] rounded-box w-40"
                         >
                             <li>
                                 <Link
