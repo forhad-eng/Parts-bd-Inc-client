@@ -64,7 +64,7 @@ const Navbar = () => {
             {user ? (
                 <>
                     <li>
-                        <NavLink className="py-1 text-white" to="/dashboard">
+                        <NavLink className="py-1 text-white hover:bg-info" to="/dashboard">
                             Dashboard
                         </NavLink>
                     </li>
