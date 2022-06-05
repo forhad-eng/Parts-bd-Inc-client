@@ -26,7 +26,7 @@ const PartsCard = ({ parts }) => {
                 <div className="flex justify-between items-center">
                     <p className="font-bold text-orange-600">${price}</p>
                     <Link to={`/purchase/${_id}`}>
-                        <button className="btn btn-primary btn-sm">
+                        <button className="btn btn-primary btn-sm hover:btn-info hover:text-white">
                             Place Order <FontAwesomeIcon className="ml-1" icon={faShoppingCart} />
                         </button>
                     </Link>

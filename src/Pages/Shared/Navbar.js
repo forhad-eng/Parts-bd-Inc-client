@@ -47,35 +47,42 @@ const Navbar = () => {
     const menuItems = (
         <>
             <li>
-                <NavLink className="hover:bg-info" to="/">
+                <NavLink className="py-1 text-white hover:bg-info" to="/">
                     Home
                 </NavLink>
             </li>
             <li>
-                <NavLink className="hover:bg-info" to="/review">
+                <NavLink className="py-1  text-white hover:bg-info" to="/review">
                     Reviews
                 </NavLink>
             </li>
             <li>
-                <NavLink className="hover:bg-info" to="/blogs">
+                <NavLink className="py-1  text-white hover:bg-info" to="/blogs">
                     Blogs
                 </NavLink>
             </li>
             {user ? (
                 <>
                     <li>
-                        <NavLink to="/dashboard">Dashboard</NavLink>
+                        <NavLink className="py-1 text-white" to="/dashboard">
+                            Dashboard
+                        </NavLink>
                     </li>
 
                     <span className="flex items-center">
-                        <button className="btn btn-primary btn-sm text-white font-normal" onClick={signOutHandle}>
+                        <button
+                            className="btn btn-primary btn-sm text-white font-normal hover:btn-info hover:text-white"
+                            onClick={signOutHandle}
+                        >
                             Sign Out <FontAwesomeIcon className="ml-2" icon={faRightFromBracket} />
                         </button>
                     </span>
                 </>
             ) : (
                 <Link to="/login" className="flex items-center">
-                    <button className="btn btn-primary btn-sm text-white font-normal">Login</button>
+                    <button className="btn btn-primary btn-sm text-white font-normal hover:btn-info hover:text-white">
+                        Login
+                    </button>
                 </Link>
             )}
         </>
@@ -113,7 +120,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="navbar-end">
-                <ul className="menu menu-horizontal p-0 mr-2 hidden lg:flex gap-3">{menuItems}</ul>
+                <ul className="menu menu-horizontal p-0 mr-2 hidden lg:flex items-center gap-3">{menuItems}</ul>
                 {user && (
                     <div className="dropdown dropdown-end">
                         <label
