@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { signOut } from 'firebase/auth'
 import React, { useContext } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { PartsIdContext } from '../../App'
 import auth from '../../Firebase/firebase.init'
+import useAdmin from '../../hooks/useAdmin'
 
 const Navbar = () => {
     const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user)
     const navigate = useNavigate()
     const { partsId } = useContext(PartsIdContext)
     const { pathname: p } = useLocation()
@@ -44,22 +46,28 @@ const Navbar = () => {
 
     const menuItems = (
         <>
-        <li>
-                <Link to="/">Home</Link>
+            <li>
+                <NavLink className="hover:bg-info" to="/">
+                    Home
+                </NavLink>
             </li>
             <li>
-                <Link to="/review">Reviews</Link>
+                <NavLink className="hover:bg-info" to="/review">
+                    Reviews
+                </NavLink>
             </li>
             <li>
-                <Link to="/blogs">Blogs</Link>
+                <NavLink className="hover:bg-info" to="/blogs">
+                    Blogs
+                </NavLink>
             </li>
             {user ? (
                 <>
                     <li>
-                        <Link to="/dashboard">Dashboard</Link>
+                        <NavLink to="/dashboard">Dashboard</NavLink>
                     </li>
 
-                    <span className="flex items-center ">
+                    <span className="flex items-center">
                         <button className="btn btn-primary btn-sm text-white font-normal" onClick={signOutHandle}>
                             Sign Out <FontAwesomeIcon className="ml-2" icon={faRightFromBracket} />
                         </button>
@@ -95,7 +103,7 @@ const Navbar = () => {
                     </label>
                     <ul
                         tabIndex="0"
-                        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#14151b] rounded-box w-52"
+                        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#21252c] rounded-box w-52"
                     >
                         {menuItems}
                     </ul>
@@ -105,38 +113,100 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="navbar-end">
-                <ul className="menu menu-horizontal p-0 mr-2 hidden lg:flex">{menuItems}</ul>
+                <ul className="menu menu-horizontal p-0 mr-2 hidden lg:flex gap-3">{menuItems}</ul>
                 {user && (
-                    <div class="avatar placeholder mr-2 lg:mr-0">
-                        <div class="bg-neutral-focus text-neutral-content rounded-full w-10">
-                            <span className="uppercase flex items-center">
-                                {user?.displayName.split(' ')[0].slice(0, 1)}
-                                {user?.displayName.split(' ')[1]?.slice(0, 1)}
-                            </span>
-                        </div>
+                    <div className="dropdown dropdown-end">
+                        <label
+                            tabIndex="0"
+                            className="w-10 h-10 flex justify-center items-center rounded-full uppercase  cursor-pointer bg-neutral"
+                        >
+                            {user?.displayName.split(' ')[0].slice(0, 1)}
+                            {user?.displayName.split(' ')[1]?.slice(0, 1)}
+                        </label>
+                        <ul
+                            tabIndex="0"
+                            class="dropdown-content menu menu-compact mt-3 p-2 shadow bg-[#21252c] rounded-box w-48"
+                        >
+                            <li>
+                                <Link
+                                    className={`hover:bg-info ${p === '/dashboard' && 'border-[1px] border-info'}`}
+                                    to="/dashboard"
+                                >
+                                    My Profile
+                                </Link>
+                            </li>
+                            {admin && (
+                                <>
+                                    <li>
+                                        <Link
+                                            className={`hover:bg-info ${
+                                                p === '/dashboard/all-users' && 'border-[1px] border-info'
+                                            }`}
+                                            to="all-users"
+                                        >
+                                            All Users
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            className={`hover:bg-info ${
+                                                p === '/dashboard/manage-orders' && 'border-[1px] border-info'
+                                            }`}
+                                            to="manage-orders"
+                                        >
+                                            Manage All Orders
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            className={`hover:bg-info ${
+                                                p === '/dashboard/manage-products' && 'border-[1px] border-info'
+                                            }`}
+                                            to="manage-products"
+                                        >
+                                            Manage Products
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            className={`hover:bg-info ${
+                                                p === '/dashboard/add-product' && 'border-[1px] border-info'
+                                            }`}
+                                            to="add-product"
+                                        >
+                                            Add Product
+                                        </Link>
+                                    </li>
+                                </>
+                            )}
+                            {!admin && (
+                                <>
+                                    <li>
+                                        <Link
+                                            className={`hover:bg-info ${
+                                                p === '/dashboard/my-orders' && 'border-[1px] border-info'
+                                            }`}
+                                            to="/dashboard/my-orders"
+                                        >
+                                            My Orders
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            className={`hover:bg-info ${
+                                                p === '/dashboard/add-review' && 'border-[1px] border-info'
+                                            }`}
+                                            to="/dashboard/add-review"
+                                        >
+                                            Add a Review
+                                        </Link>
+                                    </li>
+                                </>
+                            )}
+                        </ul>
                     </div>
                 )}
             </div>
-            {dashboardPaths.includes(p) && (
-                <div className="navbar-end flex lg:hidden">
-                    <label for="dashboard-drawer" tabIndex="1" className="btn btn-ghost lg:hidden">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h8m-8 6h16"
-                            />
-                        </svg>
-                    </label>
-                </div>
-            )}
         </div>
     )
 }
