@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import ReactStars from 'react-rating-stars-component'
 import { toast } from 'react-toastify'
@@ -40,7 +40,7 @@ const AddReview = () => {
                         name="ratingDes"
                         cols="30"
                         rows="5"
-                        className="border-[1px] rounded-lg mt-2 pl-4 pt-2"
+                        className="border-[1px] rounded-lg text-black mt-2 pl-4 pt-2"
                     ></textarea>
                     <button className="btn btn-primary w-fit my-4">Submit</button>
                 </div>

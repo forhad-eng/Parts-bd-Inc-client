@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
@@ -73,7 +72,7 @@ const MyProfile = () => {
                                 name="education"
                                 type="text"
                                 placeholder="Your intuition"
-                                class="input input-bordered w-full max-w-xs block"
+                                class="input input-bordered w-full max-w-xs block text-black"
                             />
                         )}
                         {errors?.education?.type === 'required' && (
@@ -91,7 +90,7 @@ const MyProfile = () => {
                                     name="city"
                                     type="text"
                                     placeholder="city"
-                                    class="input input-bordered w-full max-w-xs block"
+                                    class="input input-bordered w-full max-w-xs block text-black"
                                 />
                             )}
                             {errors?.city?.type === 'required' && <p className="text-primary">{errors.city.message}</p>}
@@ -108,7 +107,7 @@ const MyProfile = () => {
                                     name="division"
                                     type="text"
                                     placeholder="division"
-                                    class="input input-bordered w-full max-w-xs block"
+                                    class="input input-bordered w-full max-w-xs block text-black"
                                 />
                             )}
                             {errors?.division?.type === 'required' && (
@@ -127,7 +126,7 @@ const MyProfile = () => {
                                     name="phone"
                                     type="text"
                                     placeholder="Phone"
-                                    class="input input-bordered w-full max-w-xs block"
+                                    class="input input-bordered w-full max-w-xs block text-black"
                                 />
                             )}
                             {errors?.phone?.type === 'required' && (
@@ -146,7 +145,7 @@ const MyProfile = () => {
                                     name="linkedIn"
                                     type="text"
                                     placeholder="LinkedIn profile link"
-                                    class="input input-bordered w-full max-w-xs block"
+                                    class="input input-bordered w-full max-w-xs block text-black"
                                 />
                             )}
                             {errors?.linkedIn?.type === 'required' && (
