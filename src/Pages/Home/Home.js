@@ -1,6 +1,6 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import SetTitle from '../Shared/SetTitle'
 import Banner from './Banner'
 import Blog from './Blog'

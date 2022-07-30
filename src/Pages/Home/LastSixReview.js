@@ -1,4 +1,3 @@
-import React from 'react'
 import { useQuery } from 'react-query'
 import ReactStars from 'react-rating-stars-component'
 import axiosPrivate from '../../api/axiosPrivate'

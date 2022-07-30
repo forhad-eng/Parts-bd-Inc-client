@@ -21,8 +21,8 @@ const CancelModal = ({ order, refetch }) => {
                     <label for="cancel-order" class="btn btn-sm btn-circle absolute right-2 top-2">
                         ✕
                     </label>
-                    <h3 class="font-bold text-lg">Are you sure?</h3>
-                    <p class="py-4">
+                    <h3 class="font-bold text-lg text-black">Are you sure?</h3>
+                    <p class="py-4 text-black">
                         You want to cancel <span className="font-bold">{partsName}</span> order?
                     </p>
                     <div class="modal-action">
