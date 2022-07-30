@@ -74,7 +74,7 @@ const Purchase = () => {
             <div class="flex flex-col md:flex-row justify-center items-center gap-10 px-6">
                 <div class="card w-full max-w-sm lg:max-w-sm bg-base-100 shadow-lg mt-8 md:mt-0">
                     <figure>
-                        <img src={image} className="h-60" alt="Shoes" />
+                        <img src={image} className="h-60" alt={name} />
                     </figure>
                     <div class="card-body pt-0">
                         <h2 class="card-title">{name}</h2>

@@ -1,6 +1,6 @@
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import axiosPrivate from '../../api/axiosPrivate'
 import auth from '../../Firebase/firebase.init'
@@ -10,7 +10,7 @@ import SetTitle from '../Shared/SetTitle'
 
 const MyProfile = () => {
     const [user, loading] = useAuthState(auth)
-    const [userDetails] = useUser(user)
+    const [userDetails, setUserDetails] = useUser(user)
     const { email, name, education, city, division, phone, linkedIn } = userDetails
     const {
         register,
@@ -18,7 +18,6 @@ const MyProfile = () => {
         formState: { errors },
         reset
     } = useForm()
-    const navigate = useNavigate()
 
     const onSubmit = async formData => {
         const updatedField = {
@@ -33,8 +32,9 @@ const MyProfile = () => {
         )
         if (data.success) {
             reset()
-            navigate('/dashboard')
             toast.success(data.message, { toastId: 'profile-updated1' })
+            const { data:user } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/user/${email}`)
+            setUserDetails(user.user)
         }
     }
 
@@ -157,9 +157,11 @@ const MyProfile = () => {
                         <button className="btn btn-primary btn-sm mt-6">Add Fields</button>
                     )}
                 </form>
-                <Link to="user/update-profile">
+                { 
+                (!education && !city && !division && !phone && !linkedIn) || <Link to="user/update-profile">
                     <button className="btn btn-primary btn-sm mt-6">Update Profile</button>
                 </Link>
+                }
             </div>
         </div>
     )
