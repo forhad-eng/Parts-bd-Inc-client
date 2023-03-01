@@ -8,7 +8,7 @@ const useToken = user => {
         const getToken = async () => {
             if (user) {
                 const { email, displayName } = user?.user
-                const { data } = await axios.put(`https://secure-fjord-36331.herokuapp.com/user/${email}`, {
+                const { data } = await axios.put(`https://parts-bd-inc-server.vercel.app/user/${email}`, {
                     email,
                     name: displayName
                 })

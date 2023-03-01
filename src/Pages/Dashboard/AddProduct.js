@@ -29,7 +29,7 @@ const AddProduct = () => {
                 image: imageUrl
             }
             const { data: updatedData } = await axiosPrivate.post(
-                'https://secure-fjord-36331.herokuapp.com/parts',
+                'https://parts-bd-inc-server.vercel.app/parts',
                 newProduct
             )
             if (updatedData.success) {

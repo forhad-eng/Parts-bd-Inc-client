@@ -8,7 +8,7 @@ const useUser = user => {
         const getUser = async () => {
             if (user) {
                 const email = user.email
-                const { data } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/user/${email}`)
+                const { data } = await axiosPrivate.get(`https://parts-bd-inc-server.vercel.app/user/${email}`)
                 setUserDetails(data.user)
             }
         }

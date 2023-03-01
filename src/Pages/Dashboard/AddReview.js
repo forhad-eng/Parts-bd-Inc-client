@@ -19,7 +19,7 @@ const AddReview = () => {
             description
         }
 
-        const { data } = await axiosPrivate.post('https://secure-fjord-36331.herokuapp.com/review', review)
+        const { data } = await axiosPrivate.post('https://parts-bd-inc-server.vercel.app/review', review)
         if (data.success) {
             e.target.reset()
             toast.success(data.message)

@@ -33,7 +33,7 @@ const UpdateProfile = () => {
         }
 
         const { data } = await axiosPrivate.put(
-            `https://secure-fjord-36331.herokuapp.com/user/update/${email}`,
+            `https://parts-bd-inc-server.vercel.app/user/update/${email}`,
             updatedData
         )
         if (data.success) {

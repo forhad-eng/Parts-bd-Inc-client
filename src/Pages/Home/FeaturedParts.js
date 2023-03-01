@@ -13,7 +13,7 @@ const FeaturedParts = () => {
 
     const getParts = async ({ queryKey }) => {
         const { data } = await axiosPrivate.get(
-            `https://secure-fjord-36331.herokuapp.com/parts?page=${queryKey[1]}&size=${queryKey[2]}`
+            `https://parts-bd-inc-server.vercel.app/parts?page=${queryKey[1]}&size=${queryKey[2]}`
         )
         return data
     }

@@ -8,7 +8,7 @@ import LoadingSpinner from '../Shared/LoadingSpinner'
 const AllPendingShippedUnpaidOrders = ({ searchText }) => {
     const [order, setOrder] = useState(null)
     const getOrders = async () => {
-        const { data } = await axiosPrivate.get('https://secure-fjord-36331.herokuapp.com/order')
+        const { data } = await axiosPrivate.get('https://parts-bd-inc-server.vercel.app/order')
         return data
     }
     const { data, isLoading, refetch } = useQuery('all-orders', getOrders)
@@ -25,7 +25,7 @@ const AllPendingShippedUnpaidOrders = ({ searchText }) => {
     }
 
     const updateToShipped = async _id => {
-        const { data } = await axiosPrivate.patch(`https://secure-fjord-36331.herokuapp.com/order/${_id}`)
+        const { data } = await axiosPrivate.patch(`https://parts-bd-inc-server.vercel.app/order/${_id}`)
         if (data.success) {
             refetch()
             toast.success(data.message)
@@ -33,7 +33,7 @@ const AllPendingShippedUnpaidOrders = ({ searchText }) => {
     }
 
     const cancelOrderHandle = async _id => {
-        const { data } = await axiosPrivate.delete(`https://secure-fjord-36331.herokuapp.com/order/${_id}`)
+        const { data } = await axiosPrivate.delete(`https://parts-bd-inc-server.vercel.app/order/${_id}`)
         if (data.success) {
             refetch()
             toast.success(data.message)

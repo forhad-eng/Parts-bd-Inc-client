@@ -29,7 +29,7 @@ const Purchase = () => {
 
     useEffect(() => {
         const getParts = async () => {
-            const { data } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/parts/${id}`)
+            const { data } = await axiosPrivate.get(`https://parts-bd-inc-server.vercel.app/parts/${id}`)
             if (data) {
                 setParts(data)
                 setQuantity(data.minOrder)
@@ -59,7 +59,7 @@ const Purchase = () => {
             paid: false
         }
 
-        const { data: result } = await axiosPrivate.post('https://secure-fjord-36331.herokuapp.com/order', order)
+        const { data: result } = await axiosPrivate.post('https://parts-bd-inc-server.vercel.app/order', order)
         if (result.success) {
             toast.success(result.message, { toastId: 'orderConfirmed' })
             setRunEffect(!runEffect)

@@ -5,7 +5,7 @@ import LoadingSpinner from '../Shared/LoadingSpinner'
 
 const LastSixReview = () => {
     const getReviews = async () => {
-        const { data } = await axiosPrivate.get('https://secure-fjord-36331.herokuapp.com/review')
+        const { data } = await axiosPrivate.get('https://parts-bd-inc-server.vercel.app/review')
         return data
     }
 

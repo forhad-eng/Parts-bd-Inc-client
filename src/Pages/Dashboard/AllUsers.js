@@ -7,7 +7,7 @@ import SetTitle from '../Shared/SetTitle'
 
 const AllUsers = () => {
     const getUsers = async () => {
-        const { data } = await axiosPrivate.get('https://secure-fjord-36331.herokuapp.com/user')
+        const { data } = await axiosPrivate.get('https://parts-bd-inc-server.vercel.app/user')
         return data
     }
     const { data, isLoading, refetch } = useQuery('all-users', getUsers)
@@ -17,7 +17,7 @@ const AllUsers = () => {
     }
 
     const makeAdminHandle = async email => {
-        const { data } = await axiosPrivate.patch(`https://secure-fjord-36331.herokuapp.com/user/admin/${email}`)
+        const { data } = await axiosPrivate.patch(`https://parts-bd-inc-server.vercel.app/user/admin/${email}`)
         if (data.success) {
             refetch()
             toast.success(data.message)
@@ -25,7 +25,7 @@ const AllUsers = () => {
     }
 
     const removeUserHandle = async email => {
-        const { data } = await axiosPrivate.delete(`https://secure-fjord-36331.herokuapp.com/user/${email}`)
+        const { data } = await axiosPrivate.delete(`https://parts-bd-inc-server.vercel.app/user/${email}`)
         if (data.success) {
             refetch()
             toast.success(data.message)

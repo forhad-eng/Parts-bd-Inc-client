@@ -8,7 +8,7 @@ import PartsCard from './PartsCard'
 const Offers = () => {
     const { pathname } = useLocation()
     const getParts = async () => {
-        const { data } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/parts?page=0&size=10}`)
+        const { data } = await axiosPrivate.get(`https://parts-bd-inc-server.vercel.app/parts?page=0&size=10}`)
         return data
     }
     const { data, isLoading } = useQuery(['all-parts'], getParts, { keepPreviousData: true })

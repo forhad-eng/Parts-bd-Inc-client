@@ -27,13 +27,13 @@ const MyProfile = () => {
         }
 
         const { data } = await axiosPrivate.put(
-            `https://secure-fjord-36331.herokuapp.com/user/update/${email}`,
+            `https://parts-bd-inc-server.vercel.app/user/update/${email}`,
             updatedField
         )
         if (data.success) {
             reset()
             toast.success(data.message, { toastId: 'profile-updated1' })
-            const { data:user } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/user/${email}`)
+            const { data:user } = await axiosPrivate.get(`https://parts-bd-inc-server.vercel.app/user/${email}`)
             setUserDetails(user.user)
         }
     }

@@ -9,7 +9,7 @@ const useAdmin = user => {
         const getAdmin = async () => {
             if (user) {
                 const email = user.email
-                const { data } = await axiosPrivate.get(`https://secure-fjord-36331.herokuapp.com/admin/${email}`)
+                const { data } = await axiosPrivate.get(`https://parts-bd-inc-server.vercel.app/admin/${email}`)
                 if (data) {
                     setAdmin(data.admin)
                     setAdminLoading(false)
